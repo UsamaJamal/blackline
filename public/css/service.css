@@ -1070,7 +1070,7 @@ summary:focus-visible {
 @media (max-width: 991px) {
     .hero {
         min-height: 500px;
-        padding: 100px 0 20px;
+
     }
 
     .hero-box {
