@@ -2105,16 +2105,40 @@ button {
       <!-- 1 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/social-media-management.svg') }}" alt="social media management" title="Social Media Management">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
         </span>
-        <h3>Social Media Management</h3>
-        <p>Turn social media into a powerful engine for brand authority, engagement, and consistent organic growth.</p>
-        <a href="{{ route('services.show', 'social-media-management') }}" class="pill-arrow" aria-label="Read more about Social Media Management">
+        <h3>Photography & Videography</h3>
+        <p>High-end visual production that captures the essence of your brand through stunning photography and cinematic videography.</p>
+        <a href="{{ route('services.show', 'photography-videography') }}" class="pill-arrow" aria-label="Read more about Photography & Videography">
           <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           <span class="line"></span>
         </a>
       </article>
       <!-- 2 -->
+      <article class="card">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        </span>
+        <h3>Website Development</h3>
+        <p>Custom-coded, high-performance websites engineered for seamless user experiences and exceptional conversion rates.</p>
+        <a href="{{ route('services.show', 'website-development') }}" class="pill-arrow" aria-label="Read more about Website Development">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="line"></span>
+        </a>
+      </article>
+      <!-- 3 -->
+      <article class="card">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13"/><path d="M13 3l3 6-4 13"/></svg>
+        </span>
+        <h3>Fashion Marketing</h3>
+        <p>Tailored strategies that elevate fashion brands, driving desire, exclusivity, and measurable sales through compelling campaigns.</p>
+        <a href="{{ route('services.show', 'fashion-marketing') }}" class="pill-arrow" aria-label="Read more about Fashion Marketing">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="line"></span>
+        </a>
+      </article>
+      <!-- 4 -->
       <article class="card">
         <span class="card-icon">
           <img src="{{ asset('images/media-advertising.svg') }}" alt="media advertising" title="Media Advertising">
@@ -2126,55 +2150,7 @@ button {
           <span class="line"></span>
         </a>
       </article>
-      <!-- 3 -->
-      <article class="card">
-        <span class="card-icon">
-          <img src="{{ asset('images/instagram-management.svg') }}" alt="instagram management" title="Instagram Management">
-        </span>
-        <h3>Instagram Growth</h3>
-        <p>Scale your reach, foster deep community engagement, and turn profile visitors into loyal paying customers.</p>
-        <a href="{{ route('services.show', 'instagram-growth') }}" class="pill-arrow" aria-label="Read more about Instagram Growth">
-          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="line"></span>
-        </a>
-      </article>
-      <!-- 4 -->
-      <article class="card">
-        <span class="card-icon">
-          <img src="{{ asset('images/tik-tok-strategy.svg') }}" alt="tik tok strategy" title="Tik Tok Strategy">
-        </span>
-        <h3>TikTok Strategy</h3>
-        <p>Viral creative frameworks, high-retention video production, and culture-first storytelling that commands attention.</p>
-        <a href="{{ route('services.show', 'tiktok-strategy') }}" class="pill-arrow" aria-label="Read more about TikTok Strategy">
-          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="line"></span>
-        </a>
-      </article>
       <!-- 5 -->
-      <article class="card">
-        <span class="card-icon">
-          <img src="{{ asset('images/brand-identity.svg') }}" alt="brand identity" title="Brand Identity">
-        </span>
-        <h3>Brand Identity</h3>
-        <p>Distinct visual systems, positioning, and timeless aesthetic direction that make your business instantly recognizable.</p>
-        <a href="{{ route('services.show', 'brand-identity') }}" class="pill-arrow" aria-label="Read more about Brand Identity">
-          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="line"></span>
-        </a>
-      </article>
-      <!-- 6 -->
-      <article class="card">
-        <span class="card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5 10.6 8 15 9.5 10.6 11 9 15.5 7.4 11 3 9.5 7.4 8z"/><path d="M17 13.5 17.9 16l2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/><path d="M17.5 3v3M16 4.5h3"/></svg>
-        </span>
-        <h3>Creative Direction</h3>
-        <p>Elevate your visual storytelling with bespoke campaign aesthetics, photography direction, and artful production.</p>
-        <a href="{{ route('services.show', 'creative-direction') }}" class="pill-arrow" aria-label="Read more about Creative Direction">
-          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          <span class="line"></span>
-        </a>
-      </article>
-      <!-- 7 -->
       <article class="card">
         <span class="card-icon">
           <img src="{{ asset('images/influencer-marketing.svg') }}" alt="influencer marketing" title="Influencer Marketing">
@@ -2186,14 +2162,38 @@ button {
           <span class="line"></span>
         </a>
       </article>
+      <!-- 6 -->
+      <article class="card">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </span>
+        <h3>Social Media Management</h3>
+        <p>End-to-end community building, content planning, and daily engagement strategies that amplify your brand's presence.</p>
+        <a href="{{ route('services.show', 'social-media-management') }}" class="pill-arrow" aria-label="Read more about Social Media Management">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="line"></span>
+        </a>
+      </article>
+      <!-- 7 -->
+      <article class="card">
+        <span class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        <h3>Restaurant Marketing</h3>
+        <p>Targeted hyper-local campaigns, appetizing visuals, and influencer events designed to pack your tables every night.</p>
+        <a href="{{ route('services.show', 'restaurant-marketing') }}" class="pill-arrow" aria-label="Read more about Restaurant Marketing">
+          <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <span class="line"></span>
+        </a>
+      </article>
       <!-- 8 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/resturent-marketing.svg') }}" alt="resturent marketing" title="Resturent Marketing">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </span>
-        <h3>Restaurant Marketing</h3>
-        <p>Specialized culinary storytelling, foot-traffic campaigns, and appetizing social content tailored for F&B brands.</p>
-        <a href="{{ route('services.show', 'restaurant-marketing') }}" class="pill-arrow" aria-label="Read more about Restaurant Marketing">
+        <h3>Events Marketing</h3>
+        <p>Strategic hype, hyper-local ads, and VIP influencer outreach that guarantees a packed house and viral buzz.</p>
+        <a href="{{ route('services.show', 'events-marketing') }}" class="pill-arrow" aria-label="Read more about Events Marketing">
           <span class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           <span class="line"></span>
         </a>

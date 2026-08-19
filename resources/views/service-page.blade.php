@@ -43,7 +43,7 @@
         <span class="label">{{ $overviewSettings['label'] ?? 'OVERVIEW' }}</span>
         @php
             $desc = $overviewSettings['description'] ?? "At Black Line Marketing, we turn social media into a powerful extension of your brand. We build strategic, visually compelling social experiences designed to capture attention, build meaningful connections, and drive growth.\n\nFrom content planning and creative production to publishing and community management, we handle every part of your social presence with purpose - ensuring your brand stays consistent, relevant, and impossible to ignore.";
-            $paragraphs = explode("\n", $desc);
+            $paragraphs = explode("\n", str_replace('\n', "\n", $desc));
         @endphp
         @foreach($paragraphs as $p)
             @if(trim($p) !== '')
@@ -55,7 +55,7 @@
         <ul>
             @php
                 $bullets = $overviewSettings['bullets'] ?? "Strategic Content Planning\nCreative Content & Storytelling\nCommunity Engagement & Management\nPerformance Tracking & Optimization";
-                $bulletLines = explode("\n", $bullets);
+                $bulletLines = explode("\n", str_replace('\n', "\n", $bullets));
             @endphp
             @foreach($bulletLines as $bullet)
                 @if(trim($bullet) !== '')
@@ -179,7 +179,7 @@
       <strong>AED {{ $plan['price'] }}@if(!empty($plan['price_small']))<small>{{ $plan['price_small'] }}</small>@endif</strong>
       <a href="{{ $plan['btn_link'] }}">{{ $plan['btn_text'] }}</a>
       <ul>
-        @foreach(explode("\n", $plan['bullets']) as $bullet)
+        @foreach(explode("\n", str_replace('\n', "\n", $plan['bullets'])) as $bullet)
           @if(trim($bullet) !== '')
             <li>{{ trim($bullet) }}</li>
           @endif
