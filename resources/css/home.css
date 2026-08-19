@@ -763,14 +763,21 @@ dia img {
 .work-body {
     position: absolute;
     left: 0;
+    right: 0;
     bottom: 0;
     z-index: 3;
     padding: 0 0 46px 84px;
-    max-width: 480px;
+    max-width: 100%;
     opacity: 0;
     transform: translateY(16px);
     transition: opacity .45s var(--ease) .15s, transform .45s var(--ease) .15s;
     pointer-events: none;
+}
+
+.work-body h3,
+.work-body .work-metric,
+.work-body .work-desc {
+    max-width: 480px;
 }
 
 .work-panel.is-open .work-body {
