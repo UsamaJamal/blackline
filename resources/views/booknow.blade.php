@@ -8,20 +8,19 @@
 <meta name="description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Book a session with Black Line Marketing.' }}">
 <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'book now, black line marketing, appointment' }}">
 <link rel="canonical" href="{{ url()->current() }}">
-<meta name="robots" content="index, follow">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Book Now — Black Line Marketing' }}">
-    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Book a session with Black Line Marketing.' }}">
-    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Book Now — Black Line Marketing' }}">
+<meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Book a session with Black Line Marketing.' }}">
+<meta property="og:image" content="{{ asset('images/logo.png') }}">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{ url()->current() }}">
-    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Book Now — Black Line Marketing' }}">
-    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Book a session with Black Line Marketing.' }}">
-    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ url()->current() }}">
+<meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Book Now — Black Line Marketing' }}">
+<meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Book a session with Black Line Marketing.' }}">
+<meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
