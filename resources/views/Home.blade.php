@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Black Line Marketing | Leading Digital Marketing & Branding Agency' }}</title>
@@ -2067,7 +2068,7 @@ button {
 <section class="about">
   <div class="container about-grid">
     <div class="about-media">
-      <img src="{{ asset('images/home-about-section.webp') }}" alt="Dark luxury interior">
+      <img src="{{ asset('images/home-about-section.webp') }}" alt="home about section" title="Home About Section">
     </div>
     <div class="about-copy">
       <h2 class="h2">The <span class="gold">world's</span> most iconic brands have one thing in common they're impossible to ignore.</h2>
@@ -2091,7 +2092,7 @@ button {
       <!-- 1 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/social-media-management.svg') }}" alt="Social Media Management">
+          <img src="{{ asset('images/social-media-management.svg') }}" alt="social media management" title="Social Media Management">
         </span>
         <h3>Social Media Management</h3>
         <p>Turn social media into a powerful engine for brand authority, engagement, and consistent organic growth.</p>
@@ -2103,7 +2104,7 @@ button {
       <!-- 2 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/media-advertising.svg') }}" alt="Paid Advertising">
+          <img src="{{ asset('images/media-advertising.svg') }}" alt="media advertising" title="Media Advertising">
         </span>
         <h3>Paid Advertising</h3>
         <p>Data-driven performance marketing campaigns across Meta, Google, and TikTok engineered for maximum ROI.</p>
@@ -2115,7 +2116,7 @@ button {
       <!-- 3 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/instagram-management.svg') }}" alt="Instagram Growth">
+          <img src="{{ asset('images/instagram-management.svg') }}" alt="instagram management" title="Instagram Management">
         </span>
         <h3>Instagram Growth</h3>
         <p>Scale your reach, foster deep community engagement, and turn profile visitors into loyal paying customers.</p>
@@ -2127,7 +2128,7 @@ button {
       <!-- 4 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/tik-tok-strategy.svg') }}" alt="TikTok Strategy">
+          <img src="{{ asset('images/tik-tok-strategy.svg') }}" alt="tik tok strategy" title="Tik Tok Strategy">
         </span>
         <h3>TikTok Strategy</h3>
         <p>Viral creative frameworks, high-retention video production, and culture-first storytelling that commands attention.</p>
@@ -2139,7 +2140,7 @@ button {
       <!-- 5 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/brand-identity.svg') }}" alt="Brand Identity">
+          <img src="{{ asset('images/brand-identity.svg') }}" alt="brand identity" title="Brand Identity">
         </span>
         <h3>Brand Identity</h3>
         <p>Distinct visual systems, positioning, and timeless aesthetic direction that make your business instantly recognizable.</p>
@@ -2163,7 +2164,7 @@ button {
       <!-- 7 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/influencer-marketing.svg') }}" alt="Influencer Marketing">
+          <img src="{{ asset('images/influencer-marketing.svg') }}" alt="influencer marketing" title="Influencer Marketing">
         </span>
         <h3>Influencer Marketing</h3>
         <p>Curated creator partnerships and authentic endorsements that build brand trust and drive high-converting traffic.</p>
@@ -2175,7 +2176,7 @@ button {
       <!-- 8 -->
       <article class="card">
         <span class="card-icon">
-          <img src="{{ asset('images/resturent-marketing.svg') }}" alt="Restaurant Marketing">
+          <img src="{{ asset('images/resturent-marketing.svg') }}" alt="resturent marketing" title="Resturent Marketing">
         </span>
         <h3>Restaurant Marketing</h3>
         <p>Specialized culinary storytelling, foot-traffic campaigns, and appetizing social content tailored for F&B brands.</p>
@@ -2234,7 +2235,7 @@ button {
 <section class="stats">
   <div class="container stats-grid">
     <div class="stats-copy">
-      <img class="stats-emoji" src="{{ asset('images/trophy.png') }}" alt="">
+      <img class="stats-emoji" src="{{ asset('images/trophy.png') }}" alt="trophy" title="Trophy">
       <h2 class="h2">We deliver results that speak louder than words.</h2>
       <p class="lead">From strategy to execution, we create digital solutions that drive growth, build trust, and make a lasting impact.</p>
     </div>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Portfolio | BlackLine Marketing' }}</title>
@@ -50,7 +51,7 @@
     <div class="portfolio-grid">
       @forelse($projects as $project)
       <article class="project" data-category="{{ $project->industry }}">
-        <div class="project-img-wrapper"><img src="{{ asset($project->image) }}" alt="{{ $project->title }}"></div>
+        <div class="project-img-wrapper"><img src="{{ asset($project->image) }}" alt="{{ $project->title }}" title="{{ $project->title }}"></div>
         <h3>{{ $project->title }}</h3>
         <p>{{ $project->description }}</p>
         <a href="{{ $project->btn_link }}">{{ $project->btn_text }}</a>

@@ -53,7 +53,7 @@
                     <span style="color: var(--gold); font-size: 13px;">{{ $feedback['role'] }}</span>
                 </td>
                 <td style="padding: 18px 24px;">
-                    <img src="{{ asset($feedback['logo']) }}" alt="Logo" style="height: 30px; border-radius: 4px; background: #fff; padding: 4px;">
+                    <img src="{{ asset($feedback['logo']) }}" style="height: 30px; border-radius: 4px; background: #fff; padding: 4px;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME)))) }}">
                 </td>
                 <td style="padding: 18px 24px; font-size: 14px; color: var(--muted-2);">
                     <div style="display: flex; align-items: center; gap: 8px;">

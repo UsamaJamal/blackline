@@ -345,9 +345,7 @@ h1 {
     transition: background 0.3s ease;
 }
 
-.cards article:hover i {
-    background: #4c4a46;
-}
+
 
 .cards i img,
 .cards i svg {
@@ -1237,7 +1235,7 @@ summary:focus-visible {
     width: 72px;
     height: 72px;
     border-radius: 10px;
-    background: #464648;
+
     margin: 0;
     display: grid;
     place-items: center;
@@ -1333,8 +1331,8 @@ summary:focus-visible {
 }
 
 .cards i img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     display: block;
     object-fit: cover;
     border-radius: inherit;

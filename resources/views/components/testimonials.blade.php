@@ -17,7 +17,12 @@
               <button class="play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></button>
             </div>
             <blockquote class="testi-body">
-              <img class="testi-logo" src="{{ asset($feedback['logo']) }}" alt="Logo">
+              @php
+                $logoName = pathinfo(basename($feedback['logo']), PATHINFO_FILENAME);
+                $logoAlt = trim(str_replace(['-', '_'], ' ', $logoName));
+                $logoTitle = ucwords($logoAlt);
+              @endphp
+              <img class="testi-logo" src="{{ asset($feedback['logo']) }}" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME)))) }}">
               <p>{{ $feedback['description'] }}</p>
               <figcaption>
                 <span class="t-name">{{ $feedback['name'] }}</span>
