@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
         Route::get('portfolio-hero', [\App\Http\Controllers\AdminPortfolioController::class, 'edit'])->name('admin.portfolio-hero');
         Route::post('portfolio-hero', [\App\Http\Controllers\AdminPortfolioController::class, 'update'])->name('admin.portfolio-hero.update');
         Route::resource('portfolio/items', \App\Http\Controllers\AdminPortfolioItemController::class)->names('admin.portfolio.items')->except(['show']);
+        Route::post('portfolio/items/{id}/set-order', [\App\Http\Controllers\AdminPortfolioItemController::class, 'setOrder'])->name('admin.portfolio.items.set-order');
 
         // Dynamic Case Study Pages Management
         Route::get('case-study-pages', [\App\Http\Controllers\AdminCaseStudyPageController::class, 'index'])->name('admin.case-study-pages.index');

@@ -117,12 +117,12 @@ a {
 }
 
 .hero {
-    min-height: 600px;
-    background: url("assets/pdf/asset-12.png") center/cover no-repeat;
+    min-height: 460px;
+
     display: flex;
     align-items: flex-end;
     position: relative;
-    padding: 100px 0 40px;
+
 }
 
 .hero .service-page-container,
@@ -1070,7 +1070,7 @@ summary:focus-visible {
 @media (max-width: 991px) {
     .hero {
         min-height: 500px;
-        padding: 100px 0 20px;
+
     }
 
     .hero-box {
@@ -1107,7 +1107,7 @@ summary:focus-visible {
         min-width: 0;
         max-width: 100%;
         height: auto;
-        margin-top: -88px;
+        margin-top: 40px;
     }
 
     .process-arc-svg {
@@ -1517,9 +1517,9 @@ summary:focus-visible {
     }
 }
 
-.hero {
+/* .hero {
     background-image: url("/assets/pdf/asset-12.png");
-}
+} */
 
 .cta {
     background-image: url("/assets/pdf/asset-15.png");

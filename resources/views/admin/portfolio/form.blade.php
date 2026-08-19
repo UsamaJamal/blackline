@@ -20,9 +20,20 @@
         </div>
 
         <div class="form-group">
-            <label for="industry">Industry / Category (e.g. fashion, real-estate, beauty, web, brand)</label>
+            <label for="category">Category</label>
+            <select name="category" id="category" class="form-control" required>
+                @foreach(\App\Models\PortfolioItem::$categories as $slug => $label)
+                    <option value="{{ $slug }}" {{ old('category', $item->category ?? 'web-development') === $slug ? 'selected' : '' }}>{{ $label }}</option>
+                @endforeach
+            </select>
+            <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Which category card this project appears under on the portfolio page.</small>
+            @error('category') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
+        </div>
+
+        <div class="form-group">
+            <label for="industry">Industry / Tag (e.g. fashion, real-estate, beauty, saas)</label>
             <input type="text" name="industry" id="industry" class="form-control" value="{{ old('industry', $item->industry ?? '') }}" placeholder="e.g. fashion" required>
-            <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">This will be used in the portfolio filter sidebar.</small>
+            <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Used as a sub-filter inside the category on the portfolio page.</small>
             @error('industry') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
         </div>
 

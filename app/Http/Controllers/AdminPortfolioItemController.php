@@ -10,7 +10,7 @@ class AdminPortfolioItemController extends Controller
 {
     public function index()
     {
-        $items = PortfolioItem::all();
+        $items = PortfolioItem::orderBy('sort_order')->orderBy('created_at', 'desc')->get();
         return view('admin.portfolio.index', compact('items'));
     }
 
@@ -27,7 +27,8 @@ class AdminPortfolioItemController extends Controller
             'image' => 'required|image|max:10000',
             'btn_text' => 'required|string|max:255',
             'btn_link' => 'nullable|string|max:255',
-            'industry' => 'required|string|max:255'
+            'industry' => 'required|string|max:255',
+            'category' => 'required|in:' . implode(',', array_keys(PortfolioItem::$categories))
         ]);
 
         $imagePath = '';
@@ -45,7 +46,9 @@ class AdminPortfolioItemController extends Controller
             'image' => $imagePath,
             'btn_text' => $request->btn_text,
             'btn_link' => $request->btn_link ?? '#',
-            'industry' => strtolower($request->industry)
+            'industry' => strtolower($request->industry),
+            'category' => $request->category,
+            'sort_order' => (int) PortfolioItem::max('sort_order') + 1
         ]);
 
         return redirect()->route('admin.portfolio.items.index')->with('success', 'Portfolio item created successfully!');
@@ -67,7 +70,8 @@ class AdminPortfolioItemController extends Controller
             'image' => 'nullable|image|max:10000',
             'btn_text' => 'required|string|max:255',
             'btn_link' => 'nullable|string|max:255',
-            'industry' => 'required|string|max:255'
+            'industry' => 'required|string|max:255',
+            'category' => 'required|in:' . implode(',', array_keys(PortfolioItem::$categories))
         ]);
 
         $imagePath = $item->image;
@@ -84,7 +88,8 @@ class AdminPortfolioItemController extends Controller
             'image' => $imagePath,
             'btn_text' => $request->btn_text,
             'btn_link' => $request->btn_link ?? '#',
-            'industry' => strtolower($request->industry)
+            'industry' => strtolower($request->industry),
+            'category' => $request->category
         ]);
 
         return redirect()->route('admin.portfolio.items.index')->with('success', 'Portfolio item updated successfully!');
@@ -96,5 +101,22 @@ class AdminPortfolioItemController extends Controller
         $item->delete();
 
         return redirect()->route('admin.portfolio.items.index')->with('success', 'Portfolio item deleted successfully!');
+    }
+
+    /**
+     * Set an exact priority number for a project (typed in by the admin).
+     * Lower number = shown first.
+     */
+    public function setOrder(Request $request, $id)
+    {
+        $request->validate([
+            'sort_order' => 'required|integer|min:0'
+        ]);
+
+        $item = PortfolioItem::findOrFail($id);
+        $item->sort_order = (int) $request->sort_order;
+        $item->save();
+
+        return redirect()->route('admin.portfolio.items.index')->with('success', 'Priority updated for "' . $item->title . '".');
     }
 }

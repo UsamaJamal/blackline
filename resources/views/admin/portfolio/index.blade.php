@@ -26,13 +26,20 @@
 </div>
 @endif
 
+<div style="margin-bottom: 20px; color: var(--muted); font-size: 14px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+    <span style="color: var(--gold); font-weight: 700;">Priority:</span>
+    Type a number (1, 2, 3 …) and press <span style="color: var(--gold);">✓</span> to set the order — lower number shows first on the site.
+</div>
+
 <div class="admin-card">
     <div class="table-responsive">
         <table class="admin-table">
             <thead>
                 <tr>
+                    <th style="width: 110px; text-align: center;">Priority</th>
                     <th>Image</th>
                     <th>Title</th>
+                    <th>Category</th>
                     <th>Industry</th>
                     <th>Button</th>
                     <th>Actions</th>
@@ -41,6 +48,13 @@
             <tbody>
                 @forelse($items as $item)
                 <tr>
+                    <td style="text-align: center;">
+                        <form action="{{ route('admin.portfolio.items.set-order', $item->id) }}" method="POST" class="order-set">
+                            @csrf
+                            <input type="number" name="sort_order" value="{{ $item->sort_order }}" min="0" class="order-input" title="Type a priority number, then save">
+                            <button type="submit" class="order-save" title="Save priority">&#10003;</button>
+                        </form>
+                    </td>
                     <td>
                         <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" title="{{ $item->title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
                     </td>
@@ -49,7 +63,12 @@
                         <p style="color: var(--muted); font-size: 13px; margin: 4px 0 0;">{{ Str::limit($item->description, 70) }}</p>
                     </td>
                     <td>
-                        <span class="badge" style="background: rgba(229, 202, 131, 0.15); color: var(--gold); border: 1px solid rgba(229, 202, 131, 0.3); padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; text-transform: uppercase;">
+                        <span class="badge" style="background: rgba(229, 202, 131, 0.2); color: var(--gold); border: 1px solid rgba(229, 202, 131, 0.45); padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 700; white-space: nowrap;">
+                            {{ $item->category_label }}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="badge" style="background: rgba(255, 255, 255, 0.06); color: var(--muted); border: 1px solid rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 99px; font-size: 12px; font-weight: 600; text-transform: capitalize;">
                             {{ $item->industry }}
                         </span>
                     </td>
@@ -75,7 +94,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="5" style="text-align: center; color: var(--muted); padding: 40px 0;">
+                    <td colspan="7" style="text-align: center; color: var(--muted); padding: 40px 0;">
                         No portfolio projects found. Click "Add Project" to add one!
                     </td>
                 </tr>
@@ -91,6 +110,54 @@
     border: 1px solid var(--gold-line);
     border-radius: var(--radius);
     padding: 30px;
+}
+.order-set {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+}
+.order-input {
+    width: 46px;
+    padding: 6px 6px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(229, 202, 131, 0.35);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    -moz-appearance: textfield;
+}
+.order-input::-webkit-outer-spin-button,
+.order-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.order-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+.order-save {
+    width: 28px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #B0854A 0%, #E8C988 42%, #E4C982 58%, #BB9362 100%);
+    color: #24201A;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.order-save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(196, 155, 84, 0.3);
 }
 .btn-gold {
     background: linear-gradient(90deg, #B0854A 0%, #E8C988 42%, #E4C982 58%, #BB9362 100%);
