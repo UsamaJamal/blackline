@@ -16,6 +16,24 @@ class PortfolioItem extends Model
         'image',
         'btn_text',
         'btn_link',
-        'industry'
+        'industry',
+        'category',
+        'sort_order'
     ];
+
+    /**
+     * Available portfolio categories (slug => display label).
+     */
+    public static array $categories = [
+        'web-development' => 'Web Development',
+        'mobile-app-development' => 'Mobile App Development',
+    ];
+
+    /**
+     * Human readable label for this item's category.
+     */
+    public function getCategoryLabelAttribute(): string
+    {
+        return self::$categories[$this->category] ?? 'Web Development';
+    }
 }
