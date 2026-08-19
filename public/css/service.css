@@ -117,7 +117,7 @@ a {
 }
 
 .hero {
-    min-height: 600px;
+    min-height: 460px;
 
     display: flex;
     align-items: flex-end;

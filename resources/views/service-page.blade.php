@@ -58,8 +58,7 @@
 <body>
 @include('components.header')
 <main>
-<section class="hero" style="position: relative;">
-    <div class="service-page-container" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; width: 100%; background: url('{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}') center/cover no-repeat; z-index: 0;"></div>
+<section class="hero" style="background: url('{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}') center/cover no-repeat; position: relative;">
     <div class="service-page-container" style="position: relative; z-index: 1;">
         <div class="hero-box">
             <span>{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span>
