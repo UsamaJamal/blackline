@@ -27,11 +27,7 @@
                 @error('name') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
             </div>
 
-            <div class="form-group" style="flex: 1;">
-                <label for="badge_text">Badge Text (Optional)</label>
-                <input type="text" name="badge_text" id="badge_text" class="form-control" value="{{ old('badge_text', $plan['badge_text'] ?? '') }}">
-                @error('badge_text') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
-            </div>
+
         </div>
 
         <div class="form-group">
