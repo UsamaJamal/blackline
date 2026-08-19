@@ -99,9 +99,6 @@
             @endforeach
         </ul>
     </div>
-    <div class="overview-img-wrapper">
-        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($overviewSettings['image'] ?? 'assets/pdf/asset-08.png')), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($overviewSettings['image'] ?? 'assets/pdf/asset-08.png')), PATHINFO_FILENAME)))) }}">
-    </div>
 </section>
 <section class="benefits service-page-container" id="services">
     <div class="benefit-head">
