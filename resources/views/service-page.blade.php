@@ -9,6 +9,19 @@
     <meta name="description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
     <meta name="keywords" content="{{ strtolower($service->title ?? 'marketing') }}, marketing services, brand strategy, digital agency, BlackLine Marketing">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $service->title ?? ($heroSettings['small_text'] ?? 'Service') }} | BlackLine Marketing">
+    <meta property="og:description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $service->title ?? ($heroSettings['small_text'] ?? 'Service') }} | BlackLine Marketing">
+    <meta name="twitter:description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
     <link rel="canonical" href="{{ url()->current() }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/service.css') }}">

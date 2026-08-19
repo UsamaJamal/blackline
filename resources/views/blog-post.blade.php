@@ -9,6 +9,19 @@
     <meta name="keywords" content="{{ $blog->meta_keywords ?? 'blog, marketing, branding' }}">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $blog->meta_title ?? $blog->title }} | BlackLine Marketing">
+    <meta property="og:description" content="{{ $blog->meta_description ?? Str::limit(strip_tags($blog->content), 150) }}">
+    <meta property="og:image" content="{{ isset($blog) && $blog->image ? asset($blog->image) : asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $blog->meta_title ?? $blog->title }} | BlackLine Marketing">
+    <meta name="twitter:description" content="{{ $blog->meta_description ?? Str::limit(strip_tags($blog->content), 150) }}">
+    <meta name="twitter:image" content="{{ isset($blog) && $blog->image ? asset($blog->image) : asset('images/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blog-post.css') }}">
 </head>

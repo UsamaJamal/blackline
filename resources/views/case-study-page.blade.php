@@ -8,6 +8,19 @@
   <meta name="description" content="Explore Black Line Marketing case studies. See how we transform brands, execute strategies, and deliver measurable results.">
   <meta name="keywords" content="marketing case studies, branding portfolio, marketing results, digital strategy, brand transformation">
   <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="Our Work & Case Studies | BlackLine Marketing">
+    <meta property="og:description" content="Explore Black Line Marketing case studies. See how we transform brands, execute strategies, and deliver measurable results.">
+    <meta property="og:image" content="{{ isset($caseStudy) && $caseStudy->hero_image ? asset($caseStudy->hero_image) : asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="Our Work & Case Studies | BlackLine Marketing">
+    <meta name="twitter:description" content="Explore Black Line Marketing case studies. See how we transform brands, execute strategies, and deliver measurable results.">
+    <meta name="twitter:image" content="{{ isset($caseStudy) && $caseStudy->hero_image ? asset($caseStudy->hero_image) : asset('images/logo.png') }}">
   
   <!-- Main CSS for header, footer and global styles -->
   <link rel="stylesheet" href="{{ asset('css/home.css') }}">

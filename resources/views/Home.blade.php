@@ -9,6 +9,19 @@
 <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'digital marketing agency, branding, social media strategy, web development, SEO, Black Line Marketing' }}">
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Black Line Marketing | Leading Digital Marketing & Branding Agency' }}">
+    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Black Line Marketing builds identity systems, campaigns, and digital experiences for brands ready to lead their category, not blend into it.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Black Line Marketing | Leading Digital Marketing & Branding Agency' }}">
+    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Black Line Marketing builds identity systems, campaigns, and digital experiences for brands ready to lead their category, not blend into it.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <style>
