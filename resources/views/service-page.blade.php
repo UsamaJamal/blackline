@@ -58,9 +58,10 @@
 <body>
 @include('components.header')
 <main>
-<section class="hero" style="background: url('{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}') center/cover no-repeat; position: relative;">
-    <div class="service-page-container" style="position: relative; z-index: 1;">
-        <div class="hero-box">
+<section class="hero" style="position: relative; display: grid;">
+    <img src="{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}" alt="Hero Background" style="grid-area: 1 / 1; width: 100%; height: auto; display: block; object-fit: contain;">
+    <div class="service-page-container" style="grid-area: 1 / 1; position: relative; z-index: 1; display: flex; align-items: flex-end; width: 100%; padding-bottom: 40px;">
+        <div class="hero-box" style="margin-bottom: 0;">
             <span>{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span>
             <h1>{{ $heroSettings['heading'] ?? 'Your Brand Deserves More Than a Feed.' }}</h1>
             <a href="{{ $heroSettings['btn_link'] ?? route('book-now') }}" class="gold-btn">{!! $heroSettings['btn_text'] ?? 'Book a Discovery Call&nbsp; →' !!}</a>
