@@ -58,7 +58,16 @@
 <body>
 @include('components.header')
 <main>
-<section class="hero" style="background: url('{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}') center/cover no-repeat;"><div class="service-page-container"><div class="hero-box"><span>{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span><h1>{{ $heroSettings['heading'] ?? 'Your Brand Deserves More Than a Feed.' }}</h1><a href="{{ $heroSettings['btn_link'] ?? route('book-now') }}" class="gold-btn">{!! $heroSettings['btn_text'] ?? 'Book a Discovery Call&nbsp; →' !!}</a></div></div></section>
+<section class="hero" style="position: relative;">
+    <div class="service-page-container" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; width: 100%; background: url('{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}') center/cover no-repeat; z-index: 0;"></div>
+    <div class="service-page-container" style="position: relative; z-index: 1;">
+        <div class="hero-box">
+            <span>{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span>
+            <h1>{{ $heroSettings['heading'] ?? 'Your Brand Deserves More Than a Feed.' }}</h1>
+            <a href="{{ $heroSettings['btn_link'] ?? route('book-now') }}" class="gold-btn">{!! $heroSettings['btn_text'] ?? 'Book a Discovery Call&nbsp; →' !!}</a>
+        </div>
+    </div>
+</section>
 <section class="overview service-page-container" id="about">
     <div>
         <span class="label">{{ $overviewSettings['label'] ?? 'OVERVIEW' }}</span>
@@ -114,7 +123,7 @@
   <div class="process-container service-page-container">
     <div class="process-left-content">
       <span class="process-label">{{ $processHeader['subheading'] ?? 'PROCESS' }}</span>
-      <h2 class="process-title">{!! $processHeader['heading'] ?? 'From<br>Strategy to<br>Social<br>Growth.' !!}</h2>
+      <h2 class="process-title">{!! $processHeader['heading'] ?? 'From Strategy to<br>Social Growth.' !!}</h2>
     </div>
     
     <div class="process-visual-wrapper">

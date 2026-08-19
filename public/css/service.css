@@ -118,7 +118,7 @@ a {
 
 .hero {
     min-height: 600px;
-    background: url("assets/pdf/asset-12.png") center/cover no-repeat;
+
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -1107,7 +1107,7 @@ summary:focus-visible {
         min-width: 0;
         max-width: 100%;
         height: auto;
-        margin-top: -88px;
+        margin-top: 40px;
     }
 
     .process-arc-svg {
@@ -1517,9 +1517,9 @@ summary:focus-visible {
     }
 }
 
-.hero {
+/* .hero {
     background-image: url("/assets/pdf/asset-12.png");
-}
+} */
 
 .cta {
     background-image: url("/assets/pdf/asset-15.png");
