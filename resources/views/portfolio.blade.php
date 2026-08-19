@@ -28,7 +28,7 @@
 
   <section class="portfolio-work" id="portfolio-grid">
     <div class="portfolio-heading">
-      <h2>Brands We’ve Made Impossible<br>to Ignore.</h2>
+      <h2>Brands We’ve Made Impossible to Ignore.</h2>
       <button class="filter-button" type="button" aria-expanded="false">Filter
         <svg viewBox="0 0 24 24"><path d="M4 6h3 M11 6h9 M4 12h9 M17 12h3 M4 18h3 M11 18h9"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg>
       </button>

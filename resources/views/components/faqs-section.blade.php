@@ -1,6 +1,6 @@
 @if(isset($faqs) && $faqs->count() > 0)
     <section class="page-faqs-section container" style="margin-top: 80px; margin-bottom: 100px;">
-        <h2 style="font-size: 32px; color: #fff; text-align: center; margin-bottom: 60px; font-weight: 700;">Frequently Asked Questions</h2>
+        <h2 style="font-size: 32px; color: #fff; text-align: center; margin-bottom: 10px; font-weight: 700;">Frequently Asked Questions</h2>
         
         <div class="faqs-container" style="max-width: 1000px; margin: 0 auto;">
             @foreach($faqs as $faq)
@@ -89,6 +89,10 @@
 
         /* Responsive Mobile Layout */
         @media (max-width: 768px) {
+            .page-faqs-section {
+                margin-top: 30px !important;
+                margin-bottom: 30px !important;
+            }
             .page-faqs-section .faq-item.active .faq-grid {
                 grid-template-columns: 1fr auto;
                 gap: 15px;

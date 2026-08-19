@@ -419,7 +419,8 @@ p {
 
 @media (max-width: 500px) {
     .results-stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
     }
 }
 
@@ -609,9 +610,14 @@ p {
 }
 
 @media (max-width: 600px) {
+    .video-section {
+        padding: 30px 0px 0px 0px !important;
+    }
+
     .video-container {
         height: 250px;
     }
+
 
     .play-button {
         width: 50px;

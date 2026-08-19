@@ -76,6 +76,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .post-body p {
@@ -107,7 +109,8 @@
 }
 
 .post-share-bottom .social-share-btn {
-    background-color: #4f46e5;
+    background: var(--grad-gold);
+    background-size: 180% 100%;
     border-radius: 6px;
 }
 
@@ -115,18 +118,21 @@
     width: 40px;
     height: 40px;
     border-radius: 6px;
-    background-color: #4f46e5;
+    background: var(--grad-gold);
+    background-size: 180% 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: #24201A;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .28);
     transition: all 0.3s ease;
 }
 
 .social-share-btn:hover {
-    background-color: var(--gold);
-    color: #000000;
+    background-position: 100% 0;
+    color: #24201A;
     transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(196, 155, 84, .32);
 }
 
 .social-share-btn svg {
@@ -220,10 +226,26 @@
 /* Article Outline Card */
 #toc-card {
     background-color: #38383a;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#toc-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+#toc-card::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#toc-card::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
 #toc-card .sidebar-card-title {
     color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .outline-list {
@@ -419,7 +441,7 @@
 /* Responsive */
 @media (max-width: 992px) {
     .post-grid-container {
-        margin-bottom: -66px;
+        margin-bottom: 40px;
         grid-template-columns: 1fr;
     }
 
@@ -429,6 +451,10 @@
 }
 
 @media (max-width: 768px) {
+    .share-community-card {
+        display: none !important;
+    }
+
     .newsletter-container {
         flex-direction: column;
         align-items: flex-start;
@@ -441,6 +467,8 @@
 
     .post-main-content {
         gap: 20px;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .wsd-container {
@@ -463,6 +491,8 @@
     .post-body * {
         max-width: 100% !important;
         box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .post-body img {
@@ -474,6 +504,9 @@
         gap: 15px;
         text-align: center;
         padding: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -487,7 +520,6 @@
     }
 
     .post-cover {
-        margin-left: -7px;
         min-height: 280px;
     }
 

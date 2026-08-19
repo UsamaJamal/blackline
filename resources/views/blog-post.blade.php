@@ -142,7 +142,7 @@
                     @endif
                     
                     <!-- Share Community Card -->
-                    <div class="sidebar-card">
+                    <div class="sidebar-card share-community-card">
                         <h3 class="sidebar-card-title">Share with your community!</h3>
                         <div class="social-share-links">
                             <a href="#" class="social-share-btn" aria-label="Share on Facebook">
