@@ -43,7 +43,7 @@
                                 <span>{{ $faq->question }}</span>
                             </div>
                             <div class="faq-answer">
-                                <div class="faq-answer-content" style="color: var(--muted); line-height: 1.6;">
+                                <div class="faq-answer-content" style="color: var(--muted); line-height: 1.6; text-align: justify;">
                                     {!! $faq->answer !!}
                                 </div>
                             </div>

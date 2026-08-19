@@ -11,7 +11,7 @@
                         </div>
 
                         <div class="faq-answer-col">
-                            <div class="faq-answer-content" style="color: #bbb; font-size: 14px; line-height: 1.6; margin: 0;">
+                            <div class="faq-answer-content" style="color: #bbb; font-size: 14px; line-height: 1.6; margin: 0; text-align: justify;">
                                 {!! $faq->answer !!}
                             </div>
                         </div>
