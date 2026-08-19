@@ -168,23 +168,25 @@
             </div>
             
             <!-- Related Articles -->
+            @if(isset($relatedBlogs) && $relatedBlogs->count() > 0)
             <section class="related-articles-section">
                 <h2 class="related-title">Related Articles</h2>
                 <div class="blog-grid">
-                    @for ($i = 0; $i < 3; $i++)
-                    <a href="{{ route('blog-post', ['slug' => 'how-luxury-brands-build-presence']) }}" class="blog-card">
+                    @foreach ($relatedBlogs as $relatedBlog)
+                    <a href="{{ route('blog-post', ['slug' => $relatedBlog->slug]) }}" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop" alt="Blog Thumbnail">
+                            <img src="{{ $relatedBlog->image ? asset($relatedBlog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop' }}" alt="{{ $relatedBlog->title }}">
                         </div>
                         <div class="blog-card-content">
-                            <h3 class="blog-card-title">How Luxury Brands Can Build a Social Presence People Remember</h3>
-                            <p class="blog-card-excerpt">A strategic look at building distinctive, high-value social media experiences.</p>
-                            <p class="blog-card-meta">Oct 19 &bull; 10 min read</p>
+                            <h3 class="blog-card-title">{{ $relatedBlog->title }}</h3>
+                            <p class="blog-card-excerpt">{{ Str::limit(strip_tags($relatedBlog->content), 100) }}</p>
+                            <p class="blog-card-meta">{{ $relatedBlog->created_at->format('M d') }} &bull; {{ ceil(str_word_count(strip_tags($relatedBlog->content)) / 200) }} min read</p>
                         </div>
                     </a>
-                    @endfor
+                    @endforeach
                 </div>
             </section>
+            @endif
             
         </div>
     </main>

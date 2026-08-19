@@ -20,6 +20,11 @@ class BlogController extends Controller
     public function show($slug)
     {
         $blog = \App\Models\Blog::where('slug', $slug)->firstOrFail();
-        return view('blog-post', compact('blog'));
+        $relatedBlogs = \App\Models\Blog::where('id', '!=', $blog->id)
+                            ->latest()
+                            ->take(3)
+                            ->get();
+                            
+        return view('blog-post', compact('blog', 'relatedBlogs'));
     }
 }
