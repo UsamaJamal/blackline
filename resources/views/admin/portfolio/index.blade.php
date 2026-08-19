@@ -42,7 +42,7 @@
                 @forelse($items as $item)
                 <tr>
                     <td>
-                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="{{ asset($item->image) }}" alt="{{ $item->title }}" title="{{ $item->title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
                     </td>
                     <td>
                         <strong style="color: #fff; font-size: 16px;">{{ $item->title }}</strong>

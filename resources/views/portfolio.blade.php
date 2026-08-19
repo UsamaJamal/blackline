@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Portfolio | BlackLine Marketing' }}</title>
@@ -8,6 +9,19 @@
   <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'digital marketing portfolio, branding case studies, marketing projects, BlackLine Marketing work' }}">
   <link rel="canonical" href="{{ url()->current() }}">
   <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Portfolio | BlackLine Marketing' }}">
+    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Explore our portfolio of successful digital marketing campaigns, branding projects, and web development case studies by BlackLine Marketing.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Portfolio | BlackLine Marketing' }}">
+    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Explore our portfolio of successful digital marketing campaigns, branding projects, and web development case studies by BlackLine Marketing.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 
   <link rel="stylesheet" href="{{ asset('css/home.css') }}">
   <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
@@ -50,7 +64,7 @@
     <div class="portfolio-grid">
       @forelse($projects as $project)
       <article class="project" data-category="{{ $project->industry }}">
-        <div class="project-img-wrapper"><img src="{{ asset($project->image) }}" alt="{{ $project->title }}"></div>
+        <div class="project-img-wrapper"><img src="{{ asset($project->image) }}" alt="{{ $project->title }}" title="{{ $project->title }}"></div>
         <h3>{{ $project->title }}</h3>
         <p>{{ $project->description }}</p>
         <a href="{{ $project->btn_link }}">{{ $project->btn_text }}</a>

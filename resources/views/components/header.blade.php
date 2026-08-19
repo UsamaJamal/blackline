@@ -14,7 +14,7 @@
 
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a class="logo" href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="BlackLine Marketing"></a>
+    <a class="logo" href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="logo" title="Logo"></a>
 
     <nav class="nav" id="nav">
       <ul class="nav-list">

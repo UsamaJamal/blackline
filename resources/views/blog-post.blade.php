@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $blog->meta_title ?? $blog->title }} | BlackLine Marketing</title>
@@ -8,6 +9,19 @@
     <meta name="keywords" content="{{ $blog->meta_keywords ?? 'blog, marketing, branding' }}">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $blog->meta_title ?? $blog->title }} | BlackLine Marketing">
+    <meta property="og:description" content="{{ $blog->meta_description ?? Str::limit(strip_tags($blog->content), 150) }}">
+    <meta property="og:image" content="{{ isset($blog) && $blog->image ? asset($blog->image) : asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $blog->meta_title ?? $blog->title }} | BlackLine Marketing">
+    <meta name="twitter:description" content="{{ $blog->meta_description ?? Str::limit(strip_tags($blog->content), 150) }}">
+    <meta name="twitter:image" content="{{ isset($blog) && $blog->image ? asset($blog->image) : asset('images/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blog-post.css') }}">
 </head>
@@ -20,7 +34,7 @@
                 <!-- Left Column: Main Post Content -->
                 <div class="post-main-content">
                     <div class="post-cover">
-                        <img src="{{ $blog->image ? asset($blog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop' }}" alt="{{ $blog->title }}">
+                        <img src="{{ $blog->image ? asset($blog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop' }}" alt="{{ $blog->title }}" title="{{ $blog->title }}">
                         <div class="post-cover-overlay">
                             <h1 style="color: #fff; font-size: 42px; font-weight: 700; max-width: 800px;">{{ $blog->title }}</h1>
                             <span class="post-meta" style="color: rgba(255,255,255,0.8); margin-top: 15px; display: inline-block;">{{ $blog->created_at->format('M d, Y') }}</span>
@@ -66,7 +80,7 @@
                                         </ul>
                                     @endif
                                 @elseif($block['type'] === 'image')
-                                    <img src="{{ $block['data']['url'] }}" alt="{{ $block['data']['caption'] ?? '' }}" style="max-width: 100%; border-radius: 8px; margin: 20px 0;">
+                                    <img src="{{ $block['data']['url'] }}"data']['caption'] ?? '' }}" style="max-width: 100%; border-radius: 8px; margin: 20px 0;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($block['data']['url'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($block['data']['url'])), PATHINFO_FILENAME)))) }}">
                                     @if(isset($block['data']['caption']) && $block['data']['caption'])
                                         <p style="text-align: center; color: #888; font-size: 14px;">{{ $block['data']['caption'] }}</p>
                                     @endif
@@ -112,7 +126,7 @@
                         <div class="author-info">
                             <div class="author-image">
                                 @if($blog->author->picture)
-                                    <img src="{{ asset($blog->author->picture) }}" alt="{{ $blog->author->name }}">
+                                    <img src="{{ asset($blog->author->picture) }}" alt="{{ $blog->author->name }}" title="{{ $blog->author->name }}">
                                 @else
                                     <div style="width: 100%; height: 100%; background: #333; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--gold); border-radius: 50%;">
                                         {{ strtoupper(substr($blog->author->name, 0, 1)) }}
@@ -175,7 +189,7 @@
                     @foreach ($relatedBlogs as $relatedBlog)
                     <a href="{{ route('blog-post', ['slug' => $relatedBlog->slug]) }}" class="blog-card">
                         <div class="blog-card-image">
-                            <img src="{{ $relatedBlog->image ? asset($relatedBlog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop' }}" alt="{{ $relatedBlog->title }}">
+                            <img src="{{ $relatedBlog->image ? asset($relatedBlog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop' }}" alt="{{ $relatedBlog->title }}" title="{{ $relatedBlog->title }}">
                         </div>
                         <div class="blog-card-content">
                             <h3 class="blog-card-title">{{ $relatedBlog->title }}</h3>

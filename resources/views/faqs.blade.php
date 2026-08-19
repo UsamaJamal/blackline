@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Frequently Asked Questions | Black Line Marketing' }}</title>
@@ -8,6 +9,19 @@
     <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'marketing FAQs, agency questions, digital marketing pricing, marketing process, Black Line Marketing' }}">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Frequently Asked Questions | Black Line Marketing' }}">
+    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Find answers to commonly asked questions about Black Line Marketing\'s services, pricing, process, and more.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Frequently Asked Questions | Black Line Marketing' }}">
+    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Find answers to commonly asked questions about Black Line Marketing\'s services, pricing, process, and more.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Contact Us — Black Line Marketing' }}</title>
 <meta name="description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Get in touch with Black Line Marketing.' }}">
 <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'contact, black line marketing' }}">
-<link rel="canonical" href="{{ url()->current() }}">
+<link rel="canonical" href="{{ url()->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Contact Us — Black Line Marketing' }}">
+    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Get in touch with Black Line Marketing.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Contact Us — Black Line Marketing' }}">
+    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Get in touch with Black Line Marketing.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">current() }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">

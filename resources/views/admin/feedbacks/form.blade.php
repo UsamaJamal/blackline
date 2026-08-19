@@ -47,7 +47,7 @@
                 <label for="logo">Brand Logo / Badge Image (PNG/JPG)</label>
                 <input type="file" name="logo" id="logo" class="form-control" accept="image/*" {{ $isEdit ? '' : 'required' }}>
                 @if($isEdit && isset($feedback['logo']))
-                    <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Current Logo: <img src="{{ asset($feedback['logo']) }}" alt="Logo" style="height: 20px; vertical-align: middle; background: #fff; padding: 2px; border-radius: 2px;"></small>
+                    <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Current Logo: <img src="{{ asset($feedback['logo']) }}" style="height: 20px; vertical-align: middle; background: #fff; padding: 2px; border-radius: 2px;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($feedback['logo'])), PATHINFO_FILENAME)))) }}"></small>
                 @endif
                 @error('logo') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
             </div>

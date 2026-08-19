@@ -47,7 +47,7 @@
             <input type="file" name="icon" id="icon" class="form-control" accept="image/*">
             @if(isset($benefit) && !empty($benefit['icon']))
                 <div style="margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.05); display: inline-block; border-radius: 8px;">
-                    <img src="{{ asset($benefit['icon']) }}" alt="Current icon" style="width: 40px; height: 40px; object-fit: contain;">
+                    <img src="{{ asset($benefit['icon']) }}" style="width: 40px; height: 40px; object-fit: contain;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($benefit['icon'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($benefit['icon'])), PATHINFO_FILENAME)))) }}">
                 </div>
                 <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Leave empty to keep current image.</small>
             @endif

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Marketing & Branding Blog | BlackLine Marketing' }}</title>
@@ -8,6 +9,19 @@
     <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'marketing blog, digital marketing tips, branding strategies, social media news' }}">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Marketing & Branding Blog | BlackLine Marketing' }}">
+    <meta property="og:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Read the latest insights, strategies, and industry news on digital marketing, social media, and branding from BlackLine Marketing.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Marketing & Branding Blog | BlackLine Marketing' }}">
+    <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Read the latest insights, strategies, and industry news on digital marketing, social media, and branding from BlackLine Marketing.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
 </head>
@@ -44,7 +58,7 @@
                     @forelse($blogs as $blog)
                     <a href="{{ route('blog-post', $blog->slug) }}" class="blog-card" data-category="{{ Str::slug($blog->category) }}">
                         <div class="blog-card-image">
-                            <img src="{{ $blog->image ? asset($blog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop' }}" alt="{{ $blog->title }}">
+                            <img src="{{ $blog->image ? asset($blog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=800&auto=format&fit=crop' }}" alt="{{ $blog->title }}" title="{{ $blog->title }}">
                         </div>
                         <div class="blog-card-content">
                             <h3 class="blog-card-title">{{ $blog->title }}</h3>

@@ -85,7 +85,7 @@
                 <tr>
                     <td><strong style="color: var(--gold);">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</strong></td>
                     <td>
-                        <img src="{{ asset($item['icon']) }}" alt="Icon" style="width: 32px; height: 32px; object-fit: contain; filter: invert(0.8);">
+                        <img src="{{ asset($item['icon']) }}" style="width: 32px; height: 32px; object-fit: contain; filter: invert(0.8);" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($item['icon'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($item['icon'])), PATHINFO_FILENAME)))) }}">
                     </td>
                     <td><strong>{{ $item['title'] }}</strong></td>
                     <td>{{ Str::limit($item['description'], 50) }}</td>

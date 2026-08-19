@@ -74,7 +74,7 @@
             @if(!empty($heroSettings['image']))
                 <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Current Image: {{ $heroSettings['image'] }}</small>
                 <div style="margin-top: 10px; max-width: 300px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-                    <img src="{{ asset($heroSettings['image']) }}" alt="Hero Background" style="width: 100%; display: block;">
+                    <img src="{{ asset($heroSettings['image']) }}" style="width: 100%; display: block;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($heroSettings['image'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($heroSettings['image'])), PATHINFO_FILENAME)))) }}">
                 </div>
             @endif
             @error('image') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror

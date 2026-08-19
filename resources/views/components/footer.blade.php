@@ -48,7 +48,7 @@
   </section>
   <div class="container foot-grid">
     <div class="foot-brand">
-      <img class="foot-logo" src="{{ asset('images/logo.png') }}" alt="BlackLine Marketing">
+      <img class="foot-logo" src="{{ asset('images/logo.png') }}" alt="logo" title="Logo">
       <p>{{ $footer_description }}</p>
       <div class="socials">
         @if($contact_facebook && $contact_facebook !== '#')
@@ -127,13 +127,13 @@
   <div class="container foot-bottom">
     <p>&copy; 2024 Black Line Marketing. All rights reserved.</p>
     <div class="pay">
-      <img src="{{ asset('images/pay-visa.png') }}" alt="Visa">
-      <img src="{{ asset('images/pay-mastercard.png') }}" alt="Mastercard">
-      <img src="{{ asset('images/pay-paypal.png') }}" alt="PayPal">
-      <img src="{{ asset('images/pay-amex.png') }}" alt="American Express">
-      <img src="{{ asset('images/pay-discover.png') }}" alt="Discover">
-      <img src="{{ asset('images/pay-wire.png') }}" alt="Wire Transfer">
-      <img src="{{ asset('images/pay-bank.png') }}" alt="Bank Transfer">
+      <img src="{{ asset('images/pay-visa.png') }}" alt="pay visa" title="Pay Visa">
+      <img src="{{ asset('images/pay-mastercard.png') }}" alt="pay mastercard" title="Pay Mastercard">
+      <img src="{{ asset('images/pay-paypal.png') }}" alt="pay paypal" title="Pay Paypal">
+      <img src="{{ asset('images/pay-amex.png') }}" alt="pay amex" title="Pay Amex">
+      <img src="{{ asset('images/pay-discover.png') }}" alt="pay discover" title="Pay Discover">
+      <img src="{{ asset('images/pay-wire.png') }}" alt="pay wire" title="Pay Wire">
+      <img src="{{ asset('images/pay-bank.png') }}" alt="pay bank" title="Pay Bank">
     </div>
   </div>
 </footer>

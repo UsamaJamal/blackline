@@ -2,7 +2,7 @@
 <section class="cta" id="cta">
   <div class="container">
     <div class="cta-box">
-      <img class="cta-bg" src="{{ asset('images/cta.jpg') }}" alt="">
+      <img class="cta-bg" src="{{ asset('images/cta.jpg') }}" alt="cta" title="Cta">
       <div class="cta-inner">
         <h2>Ready to build your movement?</h2>
         <p>Let's create a brand that commands attention and builds lasting<br>influence starting with a conversation.</p>

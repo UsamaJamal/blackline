@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="{{ asset('images/blacline-marketing-favicon.png') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <base href="{{ url('/') }}/">
@@ -8,6 +9,20 @@
     <meta name="description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
     <meta name="keywords" content="{{ strtolower($service->title ?? 'marketing') }}, marketing services, brand strategy, digital agency, BlackLine Marketing">
     <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $service->title ?? ($heroSettings['small_text'] ?? 'Service') }} | BlackLine Marketing">
+    <meta property="og:description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
+    <meta property="og:image" content="{{ asset('images/logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $service->title ?? ($heroSettings['small_text'] ?? 'Service') }} | BlackLine Marketing">
+    <meta name="twitter:description" content="{{ $heroSettings['heading'] ?? 'Strategy-led marketing and management services by BlackLine Marketing. We build brands that command attention.' }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
+    <link rel="canonical" href="{{ url()->current() }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/service.css') }}">
     <script src="{{ asset('js/service.js') }}" defer></script>
@@ -50,7 +65,7 @@
         </ul>
     </div>
     <div class="overview-img-wrapper">
-        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="Social content strategy workspace">
+        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($overviewSettings['image'] ?? 'assets/pdf/asset-08.png')), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($overviewSettings['image'] ?? 'assets/pdf/asset-08.png')), PATHINFO_FILENAME)))) }}">
     </div>
 </section>
 <section class="benefits service-page-container" id="services">
@@ -65,7 +80,7 @@
                 @if(!empty($card['icon_class']))
                     {!! $card['icon_class'] !!}
                 @elseif(!empty($card['icon']))
-                    <img src="{{ asset($card['icon']) }}" alt="{{ $card['title'] }}">
+                    <img src="{{ asset($card['icon']) }}" alt="{{ $card['title'] }}" title="{{ $card['title'] }}">
                 @endif
             </i>
             <h3>{{ $card['title'] }}</h3>

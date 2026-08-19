@@ -538,3 +538,6 @@
         font-size: 1rem;
     }
 }
+.post-body ul { list-style-type: disc; padding-left: 2rem; margin-bottom: 1rem; }
+.post-body ol { list-style-type: decimal; padding-left: 2rem; margin-bottom: 1rem; }
+.post-body li { margin-bottom: 0.5rem; }

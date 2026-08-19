@@ -83,7 +83,7 @@
                 @foreach($benefits as $card)
                 <tr>
                     <td>
-                        <img src="{{ asset($card['icon']) }}" alt="Icon" style="width: 40px; height: 40px; object-fit: contain; background: #222; border-radius: 8px; padding: 5px;">
+                        <img src="{{ asset($card['icon']) }}" style="width: 40px; height: 40px; object-fit: contain; background: #222; border-radius: 8px; padding: 5px;" alt="{{ trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($card['icon'])), PATHINFO_FILENAME))) }}" title="{{ ucwords(trim(str_replace(['-', '_'], ' ', pathinfo(basename((string) ($card['icon'])), PATHINFO_FILENAME)))) }}">
                     </td>
                     <td><strong>{{ $card['title'] }}</strong></td>
                     <td>{{ Str::limit($card['description'], 50) }}</td>
