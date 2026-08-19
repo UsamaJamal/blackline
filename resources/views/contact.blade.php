@@ -26,6 +26,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 @php
   $settingsData = \App\Models\Setting::whereIn('key', [

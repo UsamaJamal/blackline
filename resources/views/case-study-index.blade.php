@@ -82,6 +82,27 @@
           margin-top: 20px;
       }
   </style>
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 <body>
 @include('components.header')
