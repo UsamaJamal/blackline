@@ -32,11 +32,11 @@ p {
 }
 
 .case-study-hero-category {
-    font-size: 14px;
+    font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: 700;
+    font-style: bold;
     color: #f0f0f0;
 }
 
@@ -46,6 +46,7 @@ p {
     margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
     line-height: 1.1;
+    margin-top: 10px;
 }
 
 .case-study-hero-subtitle {
