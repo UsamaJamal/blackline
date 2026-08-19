@@ -133,6 +133,7 @@ button {
     color: var(--muted);
     font-size: 15.5px;
     font-weight: 300;
+    text-align: justify;
 }
 
 .lead {
@@ -518,15 +519,17 @@ button {
     z-index: -1;
 }
 
-.card:hover::before {
-    clip-path: inset(0 0 0 0);
-}
+@media (min-width: 992px) {
+    .card:hover::before {
+        clip-path: inset(0 0 0 0);
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold-line-hover);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
-    color: #111;
+    .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--gold-line-hover);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
+        color: #111;
+    }
 }
 
 .card-icon {
@@ -547,11 +550,13 @@ button {
     height: 28px
 }
 
-.card:hover .card-icon {
-    border-color: #111;
-    background: var(--bg);
-    color: var(--gold);
-    transform: translateY(-2px);
+@media (min-width: 992px) {
+    .card:hover .card-icon {
+        border-color: #111;
+        background: var(--bg);
+        color: var(--gold);
+        transform: translateY(-2px);
+    }
 }
 
 .card h3 {
@@ -569,9 +574,11 @@ button {
     line-height: 1.8;
 }
 
-.card:hover h3,
-.card:hover p {
-    color: #111;
+@media (min-width: 992px) {
+    .card:hover h3,
+    .card:hover p {
+        color: #111;
+    }
 }
 
 .pill-arrow {
@@ -612,30 +619,32 @@ button {
     transition: 1.4s var(--ease);
 }
 
-.pill-arrow:hover {
-    background: rgba(229, 202, 131, .08);
-    color: var(--gold);
-    border-color: #000;
-}
+@media (min-width: 992px) {
+    .pill-arrow:hover {
+        background: rgba(229, 202, 131, .08);
+        color: var(--gold);
+        border-color: #000;
+    }
 
-.pill-arrow:hover .circle {
-    background: var(--grad-gold);
-    border-color: transparent;
-    color: #24201A;
-    transform: translateX(6px);
-}
+    .pill-arrow:hover .circle {
+        background: var(--grad-gold);
+        border-color: transparent;
+        color: #24201A;
+        transform: translateX(6px);
+    }
 
-.pill-arrow:hover .line {
-    transform: scaleX(.88)
-}
+    .pill-arrow:hover .line {
+        transform: scaleX(.88)
+    }
 
-/* Card Hover -> Pill Arrow changes */
-.card:hover .pill-arrow {
-    border-color: #000;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80') center/cover;
-    color: #fff;
-    padding-inline: 30px;
-    justify-content: space-between;
+    /* Card Hover -> Pill Arrow changes */
+    .card:hover .pill-arrow {
+        border-color: #000;
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80') center/cover;
+        color: #fff;
+        padding-inline: 30px;
+        justify-content: space-between;
+    }
 }
 
 .pill-arrow::before {
@@ -650,21 +659,23 @@ button {
     transition: opacity 1.4s var(--ease), width 1.4s var(--ease), margin 1.4s var(--ease);
 }
 
-.card:hover .pill-arrow::before {
-    opacity: 1;
-    width: auto;
-    margin-right: auto;
-}
+@media (min-width: 992px) {
+    .card:hover .pill-arrow::before {
+        opacity: 1;
+        width: auto;
+        margin-right: auto;
+    }
 
-.card:hover .pill-arrow .line {
-    opacity: 0;
-    flex: 0;
-    margin: 0;
-}
+    .card:hover .pill-arrow .line {
+        opacity: 0;
+        flex: 0;
+        margin: 0;
+    }
 
-.card:hover .pill-arrow .circle {
-    border-color: #fff;
-    color: #fff; /* Ensure arrow is white */
+    .card:hover .pill-arrow .circle {
+        border-color: #fff;
+        color: #fff; /* Ensure arrow is white */
+    }
 }
 
 /* =========================================================
@@ -1167,6 +1178,7 @@ button {
     font-weight: 400;
     line-height: 1.9;
     color: #26262A;
+    text-align: justify;
 }
 
 .testi-body figcaption {
@@ -1235,9 +1247,6 @@ button {
 }
 
 .arc {
-    fill: none;
-    stroke-width: 54px;
-    stroke-linecap: round;
     transition: filter 0.3s var(--ease);
 }
 
@@ -1256,6 +1265,9 @@ button {
     font-weight: 800;
     fill: #000000;
     letter-spacing: .01em;
+    dominant-baseline: central;
+    alignment-baseline: central;
+    pointer-events: none;
 }
 
 .conn {
@@ -1293,15 +1305,15 @@ button {
 }
 
 .ring-core strong {
-    font-size: clamp(13px, 1.5vw, 20px);
+    font-size: clamp(16px, 1.85vw, 24px);
     font-weight: 800;
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 .ring-core span {
-    font-size: clamp(10px, 1.1vw, 15px);
+    font-size: clamp(12px, 1.35vw, 18px);
     font-weight: 600;
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 .ring-core .gold {
@@ -1348,10 +1360,11 @@ button {
 }
 
 .ring-label p {
-    text-align: justify;
-    text-align-last: center;
-    width: 220px;
-    white-space: normal;
+    width: max-content;
+    max-width: 280px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.4;
 }
 
 /* Positioning the descriptions absolutely */
@@ -1369,12 +1382,12 @@ button {
 
 .lbl-strategy p,
 .lbl-results p {
-    right: 0;
+    right: -60px;
 }
 
 .lbl-story p,
 .lbl-exec p {
-    left: 0;
+    left: -60px;
 }
 
 /* Description Hover Animations */
@@ -1895,8 +1908,14 @@ button {
         height: 100%;
     }
 
+    .work-action-row {
+        justify-content: space-between;
+        width: 100%;
+    }
+
     .work-nav-arrows {
         position: static;
+        margin-left: auto;
     }
 
     .work-panel>img,
@@ -2019,6 +2038,7 @@ button {
 
     .news-form {
         flex-direction: row;
+        align-items: stretch;
         padding: 0;
         gap: 0;
     }
@@ -2027,11 +2047,24 @@ button {
         border: 1px solid rgba(255, 255, 255, 0.4);
         border-right: none;
         border-radius: 8px 0 0 8px;
+        height: 54px;
+        margin: 0;
+        background: transparent;
+        flex: 1 1 auto;
     }
 
     .news-form .btn {
         border-radius: 0 8px 8px 0;
-        justify-content: center
+        border: 1px solid transparent;
+        justify-content: center;
+        height: 54px;
+        margin: 0;
+        padding-inline: 18px;
+        box-shadow: none !important;
+    }
+
+    .news-form .btn:hover {
+        transform: none;
     }
 
     .testi-arrow {
@@ -2041,7 +2074,68 @@ button {
     .work-body h3 {
         font-size: 26px
     }
-}</style>
+}
+@media (max-width: 980px) {
+    .contact-list {
+        display: inline-block;
+        text-align: left;
+    }
+    .contact-list li {
+        justify-content: flex-start !important;
+    }
+    .pill-arrow {
+        flex-direction: row-reverse !important;
+    }
+    .pill-arrow .line {
+        margin-left: 0 !important;
+        margin-right: 14px !important;
+        transform-origin: right !important;
+    }
+    .work-action-row {
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+    .work-nav-arrows {
+        position: static !important;
+        margin-left: auto !important;
+    }
+}
+@media (max-width: 640px) {
+    .testi-media .play {
+        width: 54px !important;
+        height: 54px !important;
+    }
+    .testi-media .play svg {
+        width: 22px !important;
+        height: 22px !important;
+        margin-left: 2px !important;
+    }
+    .section-sub {
+        text-align: justify !important;
+    }
+}
+</style>
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 <body>
 
@@ -2271,50 +2365,57 @@ button {
 
     <div class="ring-wrap">
       <div class="ring-label lbl-strategy">
-        <p>Deep research and audience psychology to map your brand's unique position in the market.</p>
+        <p>Deep research and<br>audience psychology to<br>map your brand's unique<br>position in the market.</p>
         <strong>Strategy</strong>
       </div>
       <div class="ring-label lbl-story">
-        <p>Crafting compelling narratives that resonate with your audience and bring your vision to life.</p>
+        <p>Crafting compelling narratives<br>that resonate with your<br>audience and bring your<br>vision to life.</p>
         <strong>Storytelling</strong>
       </div>
       <div class="ring-label lbl-results">
         <strong>Results</strong>
-        <p>Data-driven optimization and analytics to ensure maximum return on your investment.</p>
+        <p>Data-driven optimization<br>and analytics to ensure<br>maximum return on<br>your investment.</p>
       </div>
       <div class="ring-label lbl-exec">
         <strong>Execution</strong>
-        <p>Flawless technical delivery and deployment to turn your strategic roadmap into reality.</p>
+        <p>Flawless technical delivery<br>and deployment to turn<br>your strategic roadmap<br>into reality.</p>
       </div>
 
       <svg class="ring" viewBox="0 0 1242 460" role="img" aria-label="Four step process">
         <defs>
           <linearGradient id="g1" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F4D266"/><stop offset="1" stop-color="#F7DC84"/></linearGradient>
-          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7DC84"/><stop offset="1" stop-color="#F4D266"/></linearGradient>
-          <linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4D266"/><stop offset="1" stop-color="#EFC954"/></linearGradient>
-          <linearGradient id="g4" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#EFC954"/><stop offset="1" stop-color="#F4D266"/></linearGradient>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4D266"/><stop offset="1" stop-color="#EBC04C"/></linearGradient>
+          <linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4D266"/><stop offset="1" stop-color="#EBC04C"/></linearGradient>
+          <linearGradient id="g4" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#D9A22E"/><stop offset="1" stop-color="#E5B842"/></linearGradient>
 
-          <path id="p1" d="M 433.2 200.9 A 190 190 0 0 1 591.9 42.2"/>
-          <path id="p2" d="M 650.1 42.2 A 190 190 0 0 1 808.8 200.9"/>
-          <path id="p3" d="M 650.1 417.8 A 190 190 0 0 0 808.8 259.1"/>
-          <path id="p4" d="M 433.2 259.1 A 190 190 0 0 0 591.9 417.8"/>
+          <!-- Text guide tracks -->
+          <path id="t1" d="M 433.2 200.9 A 190 190 0 0 1 591.9 42.2"/>
+          <path id="t2" d="M 650.1 42.2 A 190 190 0 0 1 808.8 200.9"/>
+          <path id="t3" d="M 650.1 417.8 A 190 190 0 0 0 808.8 259.1"/>
+          <path id="t4" d="M 433.2 259.1 A 190 190 0 0 0 591.9 417.8"/>
+
+          <!-- Figma-style sector shapes with softer rounded corners -->
+          <path id="p1" d="M 459.6 207.4 A 163 163 0 0 1 598.4 68.6 Q 615.3 67.1 614.7 50.1 L 614 30.1 Q 613.4 13.1 596.5 14.4 A 217 217 0 0 0 405.4 205.5 Q 404.1 222.4 421.1 223 L 441.1 223.7 Q 458.1 224.3 459.6 207.4 Z"/>
+          <path id="p2" d="M 643.6 68.6 A 163 163 0 0 1 782.4 207.4 Q 783.9 224.3 800.9 223.7 L 820.9 223 Q 837.9 222.4 836.6 205.5 A 217 217 0 0 0 645.5 14.4 Q 628.6 13.1 628 30.1 L 627.3 50.1 Q 626.7 67.1 643.6 68.6 Z"/>
+          <path id="p3" d="M 782.4 252.6 A 163 163 0 0 1 643.6 391.4 Q 626.7 392.9 627.3 409.9 L 628 429.9 Q 628.6 446.9 645.5 445.6 A 217 217 0 0 0 836.6 254.5 Q 837.9 237.6 820.9 237 L 800.9 236.3 Q 783.9 235.7 782.4 252.6 Z"/>
+          <path id="p4" d="M 598.4 391.4 A 163 163 0 0 1 459.6 252.6 Q 458.1 235.7 441.1 236.3 L 421.1 237 Q 404.1 237.6 405.4 254.5 A 217 217 0 0 0 596.5 445.6 Q 613.4 446.9 614 429.9 L 614.7 409.9 Q 615.3 392.9 598.4 391.4 Z"/>
         </defs>
 
-        <use href="#p1" class="arc" stroke="url(#g1)"/>
-        <use href="#p2" class="arc" stroke="url(#g2)"/>
-        <use href="#p3" class="arc" stroke="url(#g3)"/>
-        <use href="#p4" class="arc" stroke="url(#g4)"/>
+        <use href="#p1" class="arc" fill="url(#g1)"/>
+        <use href="#p2" class="arc" fill="url(#g2)"/>
+        <use href="#p3" class="arc" fill="url(#g3)"/>
+        <use href="#p4" class="arc" fill="url(#g4)"/>
 
-        <!-- flow arrows -->
-        <polygon class="tri" points="563,35 577,42.2 563,49.4"/>
-        <polygon class="tri" points="801.6,173 808.8,187 816,173"/>
-        <polygon class="tri" points="677,410.6 663,417.8 677,425"/>
-        <polygon class="tri" points="426,287 433.2,273 440.4,287"/>
+        <!-- flow arrows placed at the end of each step pointing clockwise to next step -->
+        <polygon class="tri" points="-7,-7.5 7,0 -7,7.5" transform="translate(601, 40) rotate(0)"/>
+        <polygon class="tri" points="-7,-7.5 7,0 -7,7.5" transform="translate(811, 210) rotate(90)"/>
+        <polygon class="tri" points="-7,-7.5 7,0 -7,7.5" transform="translate(641, 420) rotate(180)"/>
+        <polygon class="tri" points="-7,-7.5 7,0 -7,7.5" transform="translate(431, 250) rotate(270)"/>
 
-        <text class="step-txt"><textPath href="#p1" startOffset="50%" text-anchor="middle">Step 1</textPath></text>
-        <text class="step-txt"><textPath href="#p2" startOffset="50%" text-anchor="middle">Step 2</textPath></text>
-        <text class="step-txt"><textPath href="#p3" startOffset="50%" text-anchor="middle">Step 3</textPath></text>
-        <text class="step-txt"><textPath href="#p4" startOffset="50%" text-anchor="middle">Step 4</textPath></text>
+        <text class="step-txt" dominant-baseline="central"><textPath href="#t1" startOffset="50%" text-anchor="middle" dominant-baseline="central">Step 1</textPath></text>
+        <text class="step-txt" dominant-baseline="central"><textPath href="#t2" startOffset="50%" text-anchor="middle" dominant-baseline="central">Step 2</textPath></text>
+        <text class="step-txt" dominant-baseline="central"><textPath href="#t3" startOffset="50%" text-anchor="middle" dominant-baseline="central">Step 3</textPath></text>
+        <text class="step-txt" dominant-baseline="central"><textPath href="#t4" startOffset="50%" text-anchor="middle" dominant-baseline="central">Step 4</textPath></text>
 
         <!-- connectors -->
         <path class="conn conn-1" d="M 312 206 L 364 206 C 374 206, 382 200, 385.5 192 A 240 240 0 0 1 467 46"/>

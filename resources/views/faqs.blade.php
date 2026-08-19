@@ -27,6 +27,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/faqs.css') }}">
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 <body>
 
@@ -57,7 +78,7 @@
                                 <span>{{ $faq->question }}</span>
                             </div>
                             <div class="faq-answer">
-                                <div class="faq-answer-content" style="color: var(--muted); line-height: 1.6;">
+                                <div class="faq-answer-content" style="color: var(--muted); line-height: 1.6; text-align: justify;">
                                     {!! $faq->answer !!}
                                 </div>
                             </div>

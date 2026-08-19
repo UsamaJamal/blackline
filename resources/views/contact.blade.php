@@ -7,7 +7,7 @@
 <title>{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Contact Us — Black Line Marketing' }}</title>
 <meta name="description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Get in touch with Black Line Marketing.' }}">
 <meta name="keywords" content="{{ !empty($seo['meta_keywords']) ? $seo['meta_keywords'] : 'contact, black line marketing' }}">
-<link rel="canonical" href="{{ url()->
+<link rel="canonical" href="{{ url()->current() }}">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
@@ -20,12 +20,33 @@
     <meta name="twitter:url" content="{{ url()->current() }}">
     <meta name="twitter:title" content="{{ !empty($seo['meta_title']) ? $seo['meta_title'] : 'Contact Us — Black Line Marketing' }}">
     <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Get in touch with Black Line Marketing.' }}">
-    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">current() }}">
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 @php
   $settingsData = \App\Models\Setting::whereIn('key', [

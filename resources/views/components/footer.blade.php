@@ -106,26 +106,28 @@
     </div>
 
     <div class="foot-col">
-      <h4>Contact</h4>
-      <ul class="contact-list">
-        <li>
-          <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg></span>
-          <a href="tel:{{ preg_replace('/[^0-9+]/', '', $contact_phone) }}">{{ $contact_phone }}</a>
-        </li>
-        <li>
-          <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4.2-8 5-8-5V6l8 5 8-5z"/></svg></span>
-          <a href="mailto:{{ $contact_email }}">{{ $contact_email }}</a>
-        </li>
-        <li>
-          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11"/><circle cx="12" cy="10" r="2.6"/></svg></span>
-          <span>{!! nl2br(e($contact_address)) !!}</span>
-        </li>
-      </ul>
+      <div style="display: inline-block; text-align: left;">
+        <h4 style="text-align: left !important;">Contact</h4>
+        <ul class="contact-list">
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg></span>
+            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $contact_phone) }}">{{ $contact_phone }}</a>
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2m0 4.2-8 5-8-5V6l8 5 8-5z"/></svg></span>
+            <a href="mailto:{{ $contact_email }}">{{ $contact_email }}</a>
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span>{!! nl2br(e($contact_address)) !!}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="container foot-bottom">
-    <p>&copy; 2024 Black Line Marketing. All rights reserved.</p>
+    <p>&copy; 2026 Black Line Marketing. All rights reserved.</p>
     <div class="pay">
       <img src="{{ asset('images/pay-visa.png') }}" alt="pay visa" title="Pay Visa">
       <img src="{{ asset('images/pay-mastercard.png') }}" alt="pay mastercard" title="Pay Mastercard">

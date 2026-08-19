@@ -106,6 +106,7 @@ button {
     color: var(--muted);
     font-size: 15.5px;
     font-weight: 300;
+    text-align: justify;
 }
 
 .lead {
@@ -493,15 +494,17 @@ button {
     transition: clip-path 0.6s var(--ease);
 }
 
-.card:hover::before {
-    clip-path: inset(0 0 0 0);
-}
+@media (min-width: 992px) {
+    .card:hover::before {
+        clip-path: inset(0 0 0 0);
+    }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold-line-hover);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
-    color: #111;
+    .card:hover {
+        transform: translateY(-8px);
+        border-color: var(--gold-line-hover);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
+        color: #111;
+    }
 }
 
 .card-icon {
@@ -522,11 +525,13 @@ button {
     height: 28px
 }
 
-.card:hover .card-icon {
-    border-color: #111;
-    background: var(--bg);
-    color: var(--gold);
-    transform: translateY(-2px);
+@media (min-width: 992px) {
+    .card:hover .card-icon {
+        border-color: #111;
+        background: var(--bg);
+        color: var(--gold);
+        transform: translateY(-2px);
+    }
 }
 
 .card h3 {
@@ -544,9 +549,12 @@ button {
     line-height: 1.8;
 }
 
-.card:hover h3,
-.card:hover p {
-    color: #111;
+@media (min-width: 992px) {
+
+    .card:hover h3,
+    .card:hover p {
+        color: #111;
+    }
 }
 
 .pill-arrow {
@@ -587,30 +595,32 @@ button {
     transition: 1.4s var(--ease);
 }
 
-.pill-arrow:hover {
-    background: rgba(229, 202, 131, .08);
-    color: var(--gold);
-    border-color: #000;
-}
+@media (min-width: 992px) {
+    .pill-arrow:hover {
+        background: rgba(229, 202, 131, .08);
+        color: var(--gold);
+        border-color: #000;
+    }
 
-.pill-arrow:hover .circle {
-    background: var(--grad-gold);
-    border-color: transparent;
-    color: #24201A;
-    transform: translateX(6px);
-}
+    .pill-arrow:hover .circle {
+        background: var(--grad-gold);
+        border-color: transparent;
+        color: #24201A;
+        transform: translateX(6px);
+    }
 
-.pill-arrow:hover .line {
-    transform: scaleX(.88)
-}
+    .pill-arrow:hover .line {
+        transform: scaleX(.88)
+    }
 
-/* Card Hover -> Pill Arrow changes */
-.card:hover .pill-arrow {
-    border-color: #000;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80') center/cover;
-    color: #fff;
-    padding-inline: 30px;
-    justify-content: space-between;
+    /* Card Hover -> Pill Arrow changes */
+    .card:hover .pill-arrow {
+        border-color: #000;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80') center/cover;
+        color: #fff;
+        padding-inline: 30px;
+        justify-content: space-between;
+    }
 }
 
 .pill-arrow::before {
@@ -625,22 +635,24 @@ button {
     transition: opacity 1.4s var(--ease), width 1.4s var(--ease), margin 1.4s var(--ease);
 }
 
-.card:hover .pill-arrow::before {
-    opacity: 1;
-    width: auto;
-    margin-right: auto;
-}
+@media (min-width: 992px) {
+    .card:hover .pill-arrow::before {
+        opacity: 1;
+        width: auto;
+        margin-right: auto;
+    }
 
-.card:hover .pill-arrow .line {
-    opacity: 0;
-    flex: 0;
-    margin: 0;
-}
+    .card:hover .pill-arrow .line {
+        opacity: 0;
+        flex: 0;
+        margin: 0;
+    }
 
-.card:hover .pill-arrow .circle {
-    border-color: #fff;
-    color: #fff;
-    /* Ensure arrow is white */
+    .card:hover .pill-arrow .circle {
+        border-color: #fff;
+        color: #fff;
+        /* Ensure arrow is white */
+    }
 }
 
 /* =========================================================
@@ -761,17 +773,17 @@ button {
 }
 
 .work-body {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  padding: 0 0 46px 84px;
-  max-width: 100%;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.45s var(--ease) 0.15s, transform 0.45s var(--ease) 0.15s;
-  pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 0 0 46px 84px;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.45s var(--ease) 0.15s, transform 0.45s var(--ease) 0.15s;
+    pointer-events: none;
 }
 
 .work-body h3,
@@ -1059,6 +1071,7 @@ button {
     font-weight: 400;
     line-height: 1.9;
     color: #26262A;
+    text-align: justify;
 }
 
 .testi-body figcaption {
@@ -1124,9 +1137,6 @@ button {
 }
 
 .arc {
-    fill: none;
-    stroke-width: 54px;
-    stroke-linecap: round;
     transition: filter 0.3s var(--ease);
 }
 
@@ -1145,6 +1155,9 @@ button {
     font-weight: 800;
     fill: #000000;
     letter-spacing: .01em;
+    dominant-baseline: central;
+    alignment-baseline: central;
+    pointer-events: none;
 }
 
 .conn {
@@ -1193,15 +1206,15 @@ button {
 }
 
 .ring-core strong {
-    font-size: clamp(13px, 1.5vw, 20px);
+    font-size: clamp(16px, 1.85vw, 24px);
     font-weight: 800;
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 .ring-core span {
-    font-size: clamp(10px, 1.1vw, 15px);
+    font-size: clamp(12px, 1.35vw, 18px);
     font-weight: 600;
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 .ring-core .gold {
@@ -1221,7 +1234,7 @@ button {
 
 .ring-label strong {
     font-size: clamp(20px, 1.75vw, 28px);
-    font-weight: 800;
+    font-weight: 700;
     white-space: nowrap;
     color: #FAF9F6;
     display: block;
@@ -1240,7 +1253,9 @@ button {
     font-weight: 400;
     color: #E2E1DF;
     line-height: 1.5;
-    width: 280px;
+    width: max-content;
+    max-width: 280px;
+    text-align: center;
     white-space: normal;
     opacity: 0;
     visibility: hidden;
@@ -1291,12 +1306,12 @@ button {
 
 .lbl-strategy p,
 .lbl-results p {
-    right: 0;
+    right: -60px;
 }
 
 .lbl-story p,
 .lbl-exec p {
-    left: 0;
+    left: -60px;
 }
 
 /* Description Hover Animations */
@@ -1445,9 +1460,8 @@ button {
    NEWSLETTER
    ========================================================= */
 .newsletter {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    border-bottom: 1px solid rgba(255, 255, 255, .12)
+    padding-block: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
 }
 
 .news-grid {
@@ -1470,25 +1484,40 @@ button {
 .news-form {
     display: flex;
     gap: 12px;
-    width: 100%;
-    max-width: 480px;
+    align-items: stretch;
+    justify-content: flex-end;
+    flex: 1 1 auto;
 }
 
 .news-form input {
-    flex: 1;
+    width: 100%;
+    max-width: 449px;
+    height: 60px;
+    min-width: 0;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .55);
     border-radius: 8px;
-    padding: 12px 18px;
+    padding: 0 22px;
     color: #fff;
-    font-size: 15px;
-    transition: .3s var(--ease);
+    font-size: 16px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color .25s var(--ease);
+}
+
+.news-form input::placeholder {
+    color: #B6B6B7;
 }
 
 .news-form input:focus {
-    outline: none;
     border-color: var(--gold);
-    box-shadow: 0 0 0 4px rgba(229, 202, 131, .15);
+}
+
+.news-form .btn {
+    border-radius: 8px;
+    height: 62px;
+    padding-inline: 32px;
+    font-size: 16px;
 }
 
 /* =========================================================
@@ -1506,7 +1535,7 @@ button {
     grid-template-columns: 1.55fr 1fr 1.15fr 1.1fr;
     gap: 44px;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 20px !important;
 }
 
 .foot-logo {
@@ -1601,7 +1630,7 @@ button {
 
 .foot-bottom {
     border-top: 1px solid rgba(255, 255, 255, .12);
-    padding-block: 50px;
+    padding-block: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1754,6 +1783,26 @@ button {
     .ring-label {
         font-size: 15px
     }
+
+    .pill-arrow {
+        flex-direction: row-reverse !important;
+    }
+
+    .pill-arrow .line {
+        margin-left: 0 !important;
+        margin-right: 14px !important;
+        transform-origin: right !important;
+    }
+
+    .work-action-row {
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
+    .work-nav-arrows {
+        position: static !important;
+        margin-left: auto !important;
+    }
 }
 
 @media (max-width:820px) {
@@ -1860,32 +1909,41 @@ button {
     }
 
     .newsletter h2 {
-        text-align: center;
         white-space: normal;
-        font-size: 18px;
-        margin-bottom: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
     }
 
     .news-form {
         flex-direction: row;
+        align-items: stretch;
         padding: 0;
         gap: 0;
     }
 
     .news-form input {
-        border: 1px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.4);
         border-right: none;
         border-radius: 8px 0 0 8px;
-        height: 50px;
+        height: 54px;
+        margin: 0;
         background: transparent;
         flex: 1 1 auto;
     }
 
     .news-form .btn {
         border-radius: 0 8px 8px 0;
-        height: 50px;
-        box-shadow: none !important;
+        border: 1px solid transparent;
+        justify-content: center;
+        height: 54px;
+        margin: 0;
         padding-inline: 18px;
+        box-shadow: none !important;
+    }
+
+    .news-form .btn:hover {
+        transform: none;
     }
 
     .foot-grid {
@@ -1928,8 +1986,13 @@ button {
         text-align: center;
     }
 
+    .contact-list {
+        display: inline-block;
+        text-align: left;
+    }
+
     .contact-list li {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .foot-bottom {
