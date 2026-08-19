@@ -67,6 +67,37 @@
             margin: 0;
             padding: 0;
         }
+        
+        h1 { font-size: 42px !important; }
+        h2 { font-size: 34px !important; }
+        h3 { font-size: 26px !important; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 32px !important; }
+            h2 { font-size: 26px !important; }
+            h3 { font-size: 22px !important; }
+        }
     </style>
+    @hasSection('schema')
+        @yield('schema')
+    @else
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Blackline Marketing",
+            "url": "{{ url('/') }}",
+            "logo": "{{ asset('images/logo.png') }}"
+        }
+        </script>
+    @endif
 </head>
 <body>
