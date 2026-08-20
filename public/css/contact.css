@@ -137,9 +137,26 @@
     border-bottom-color: var(--gold);
 }
 
+/* Override browser autofill background for dark theme */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover, 
+.input-group input:-webkit-autofill:focus, 
+.input-group input:-webkit-autofill:active,
+.input-group textarea:-webkit-autofill,
+.input-group textarea:-webkit-autofill:hover,
+.input-group textarea:-webkit-autofill:focus,
+.input-group textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1C1C1F inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .input-group textarea {
     resize: none;
-    min-height: 40px;
+    overflow: hidden;
+    min-height: 30px;
+    height: 36px;
+    padding-bottom: 4px;
 }
 
 .select-group {

@@ -32,6 +32,15 @@ Route::post('/contact-us', [\App\Http\Controllers\ContactController::class, 'sto
 Route::get('/book-now', [\App\Http\Controllers\BookNowController::class, 'index'])->name('book-now');
 Route::post('/book-now', [\App\Http\Controllers\BookNowController::class, 'store'])->name('book-now.store');
 
+Route::get('/clear-cache', function() {
+    \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
+    \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('route:clear');
+    \Illuminate\Support\Facades\Artisan::call('view:clear');
+    return 'Cache cleared successfully! Please try submitting the contact form now.';
+});
+
 Route::prefix('admin')->group(function () {
     Route::get('login', [\App\Http\Controllers\AdminAuthController::class, 'showLoginForm'])->name('admin.login');
     Route::post('login', [\App\Http\Controllers\AdminAuthController::class, 'login']);
