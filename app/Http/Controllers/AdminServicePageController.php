@@ -103,7 +103,8 @@ class AdminServicePageController extends Controller
             'heading' => 'required|string',
             'btn_text' => 'required|string',
             'btn_link' => 'required|string',
-            'image' => 'nullable|image|max:5000'
+            'image' => 'nullable|image|max:5000',
+            'mobile_image' => 'nullable|image|max:5000'
         ]);
 
         $hero = $service->hero ?? [];
@@ -115,9 +116,18 @@ class AdminServicePageController extends Controller
             $imagePath = 'images/service/' . $filename;
         }
 
+        $mobileImagePath = $hero['mobile_image'] ?? null;
+        if ($request->hasFile('mobile_image')) {
+            $mobileFile = $request->file('mobile_image');
+            $mobileFilename = 'mob_' . time() . '_' . $mobileFile->getClientOriginalName();
+            $mobileFile->move(public_path('images/service'), $mobileFilename);
+            $mobileImagePath = 'images/service/' . $mobileFilename;
+        }
+
         $service->update([
             'hero' => [
                 'image' => $imagePath,
+                'mobile_image' => $mobileImagePath,
                 'small_text' => $request->small_text,
                 'heading' => $request->heading,
                 'btn_text' => $request->btn_text,

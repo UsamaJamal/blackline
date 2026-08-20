@@ -19,7 +19,7 @@
     <nav class="nav" id="nav">
       <ul class="nav-list">
         <li class="has-drop">
-          <a href="{{ route('services') }}">Services
+          <a href="javascript:void(0)">Services
             <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </a>
           <div class="drop">
@@ -35,7 +35,7 @@
         <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
         <!-- <li><a href="{{ route('case-study') }}">Case Study</a></li> -->
         <li><a href="{{ route('blogs') }}">Blogs</a></li>
-        <li><a href="{{ route('faqs') }}">FAQ`s</a></li>
+        <li><a href="{{ route('faqs') }}">FAQs</a></li>
         <li><a href="{{ route('contact') }}">Contact Us</a></li>
       </ul>
     </nav>

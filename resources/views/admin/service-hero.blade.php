@@ -80,6 +80,18 @@
             @error('image') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
         </div>
 
+        <div class="form-group">
+            <label for="mobile_image">Mobile Background Image (Optional)</label>
+            <input type="file" name="mobile_image" id="mobile_image" class="form-control" accept="image/png, image/jpeg, image/webp">
+            @if(!empty($heroSettings['mobile_image']))
+                <small style="color: var(--muted); font-size: 13px; display: block; margin-top: 6px;">Current Mobile Image: {{ $heroSettings['mobile_image'] }}</small>
+                <div style="margin-top: 10px; max-width: 300px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="{{ asset($heroSettings['mobile_image']) }}" style="width: 100%; display: block;" alt="Mobile Hero Background">
+                </div>
+            @endif
+            @error('mobile_image') <span class="error" style="color: #F44336; font-size: 13px;">{{ $message }}</span> @enderror
+        </div>
+
         <div style="margin-top: 30px;">
             <button type="submit" class="btn btn-gold">Save Settings</button>
         </div>
