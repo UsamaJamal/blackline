@@ -37,7 +37,7 @@ main {
 .faqs-hero p {
     font-size: 14px;
     color: #DEDEDE;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -213,5 +213,9 @@ main {
         grid-column: 1 / -1;
         grid-row: 2;
         padding-right: 0;
+    }
+
+    .faqs-hero p br {
+        display: none;
     }
 }

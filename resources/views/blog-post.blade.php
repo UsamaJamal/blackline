@@ -57,8 +57,8 @@
                     <div class="post-cover">
                         <img src="{{ $blog->image ? asset($blog->image) : 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1200&auto=format&fit=crop' }}" alt="{{ $blog->title }}" title="{{ $blog->title }}">
                         <div class="post-cover-overlay">
-                            <h1 style="color: #fff; font-size: 42px; font-weight: 700; max-width: 800px;">{{ $blog->title }}</h1>
-                            <span class="post-meta" style="color: rgba(255,255,255,0.8); margin-top: 15px; display: inline-block;">{{ $blog->created_at->format('M d, Y') }}</span>
+                            <h1>{{ $blog->title }}</h1>
+                            <span class="post-meta">{{ $blog->created_at->format('M d, Y') }}</span>
                         </div>
                     </div>
                     
