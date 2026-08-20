@@ -99,6 +99,26 @@
             .hero-text-container h1, .hero-text-container span {
                 text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
             }
+            .overview {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .overview > div:first-child {
+                order: 1 !important;
+            }
+            .overview > .overview-img-wrapper {
+                order: 2 !important;
+            }
+            .process-visual-wrapper {
+                margin-top: 25px !important; 
+            }
+            .process-left-content {
+                margin-bottom: -110px !important;
+                padding-bottom: 0 !important;
+            }
+            .process-step-pill.step-1 {
+                margin-top: 0 !important;
+            }
         }
     </style>
     <div class="hero-wrapper-div" style="position: relative; width: 100%; margin: 0 auto; overflow: hidden; background: #161616;">
