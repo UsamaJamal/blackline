@@ -99,6 +99,9 @@
             @endforeach
         </ul>
     </div>
+    <div class="overview-img-wrapper">
+        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="{{ $overviewSettings['label'] ?? 'Overview' }}">
+    </div>
 </section>
 <section class="benefits service-page-container" id="services">
     <div class="benefit-head">
