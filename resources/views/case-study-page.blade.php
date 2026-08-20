@@ -51,12 +51,31 @@
 @include('components.header')
 
 <main>
-    <section class="case-study-hero" style="background-image: url('{{ asset($hero['image'] ?? 'images/work-nova.jpg') }}');">
-        <div class="container">
-            <div class="case-study-hero-content">
-                <div class="case-study-hero-category">{{ $hero['badge'] ?? 'FASHION' }}</div>
-                <h1 class="case-study-hero-title">{{ $hero['heading'] ?? 'Maison Noir' }}</h1>
-                <p class="case-study-hero-subtitle">{{ $hero['description'] ?? 'Building a Brand Designed to Be Remembered.' }}</p>
+    <style>
+        @media (max-width: 768px) {
+            .case-study-hero-title {
+                font-size: 36px !important;
+            }
+        }
+    </style>
+    <section class="case-study-hero-wrapper" style="position: relative; width: 100%; margin: 0 auto; overflow: hidden; background: #161616;">
+        <!-- Image determines the height of the section. No cropping. -->
+        <picture>
+            <source media="(max-width: 768px)" srcset="{{ asset($hero['mobile_image'] ?? ($hero['image'] ?? 'images/work-nova.jpg')) }}">
+            <img class="hero-image-img" src="{{ asset($hero['image'] ?? 'images/work-nova.jpg') }}" alt="Case Study Hero" style="width: 100%; height: auto; display: block;">
+        </picture>
+        
+        <!-- Gradient overlay -->
+        <div class="hero-gradient-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(15, 15, 15, 0.90) 0%, rgba(15, 15, 15, 0.55) 45%, rgba(15, 15, 15, 0.05) 80%); pointer-events: none; z-index: 1;"></div>
+        
+        <!-- Text overlay -->
+        <div class="case-study-hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; display: flex; align-items: center;">
+            <div class="container" style="width: 100%;">
+                <div class="case-study-hero-content" style="max-width: 600px;">
+                    <div class="case-study-hero-category">{{ $hero['badge'] ?? 'FASHION' }}</div>
+                    <h1 class="case-study-hero-title">{{ $hero['heading'] ?? 'Maison Noir' }}</h1>
+                    <p class="case-study-hero-subtitle">{{ $hero['description'] ?? 'Building a Brand Designed to Be Remembered.' }}</p>
+                </div>
             </div>
         </div>
     </section>

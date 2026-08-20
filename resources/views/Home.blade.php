@@ -889,6 +889,11 @@ button {
     gap: 16px;
 }
 
+.mobile-nav-arrows {
+    display: none;
+}
+
+
 .work-arrow {
     width: 38px;
     height: 38px;
@@ -1941,6 +1946,28 @@ button {
         opacity: 1 !important;
         pointer-events: auto !important;
     }
+
+    .desktop-nav-arrows {
+        display: none !important;
+    }
+
+    .mobile-nav-arrows {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 8px !important;
+        z-index: 20;
+    }
+
+    .work-arrow {
+        width: 38px !important;
+        height: 38px !important;
+        border-color: rgba(245, 212, 92, 0.7) !important;
+        color: #F5D45C !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+    }
 }
 
 @media (max-width:640px) {
@@ -2309,10 +2336,14 @@ button {
             <a href="{{ $study['btn_link'] ?? '#' }}" class="btn btn-gold btn-sm">{{ $study['btn_text'] ?? 'View Case Study' }}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
+            <div class="work-nav-arrows mobile-nav-arrows" style="position: relative; right: auto; bottom: auto; opacity: 1; pointer-events: auto;">
+              <button class="work-arrow work-prev" aria-label="Previous" {!! $index === 0 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button class="work-arrow work-next" aria-label="Next" {!! $index === count($caseStudies) - 1 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+            </div>
           </div>
         </div>
 
-        <div class="work-nav-arrows">
+        <div class="work-nav-arrows desktop-nav-arrows">
           <button class="work-arrow work-prev" aria-label="Previous" {!! $index === 0 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
           <button class="work-arrow work-next" aria-label="Next" {!! $index === count($caseStudies) - 1 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
         </div>

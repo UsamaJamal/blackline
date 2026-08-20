@@ -89,8 +89,15 @@
             }
             .hero-image-img {
                 min-height: auto !important;
-                height: auto !important;
-                object-fit: fill !important; /* Reset to default */
+                max-height: 50vh !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+            .hero-gradient-overlay {
+                background: rgba(10, 10, 10, 0.75) !important;
+            }
+            .hero-text-container h1, .hero-text-container span {
+                text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
             }
         }
     </style>
