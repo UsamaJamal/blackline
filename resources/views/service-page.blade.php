@@ -58,7 +58,7 @@
 <body>
 @include('components.header')
 <main>
-<section class="hero-wrapper" style="position: relative; padding: 10px 0 10px;">
+<section class="hero-wrapper" style="position: relative; padding: 0px 0 10px;">
     <style>
         @media (max-width: 768px) {
             .hero-text-overlay {
@@ -142,6 +142,11 @@
             @endforeach
         </ul>
     </div>
+    @if(!empty($overviewSettings['image']))
+        <div class="overview-img-wrapper">
+            <img src="{{ asset($overviewSettings['image']) }}" alt="Overview">
+        </div>
+    @endif
 </section>
 <section class="benefits service-page-container" id="services">
     <div class="benefit-head">
