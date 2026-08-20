@@ -90,7 +90,7 @@
             .hero-image-img {
                 min-height: auto !important;
                 max-height: 50vh !important;
-                height: 100% !important;
+                height: 50vh !important;
                 object-fit: cover !important;
             }
             .hero-gradient-overlay {
