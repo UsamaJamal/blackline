@@ -60,8 +60,8 @@
 <main>
 <section class="hero-wrapper" style="position: relative; padding: 10px 0 10px;">
     <div class="service-page-container">
-        <div style="position: relative; display: grid; border-radius: 20px; overflow: hidden; background: #161616; height: 380px;">
-            <img src="{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}" alt="Hero Background" style="grid-area: 1 / 1; width: 100%; height: 100%; object-fit: cover; object-position: center right; display: block;">
+        <div style="position: relative; display: grid; border-radius: 20px; overflow: hidden; background: #161616;">
+            <img src="{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}" alt="Hero Background" style="grid-area: 1 / 1; width: 100%; height: auto; display: block;">
             <div style="grid-area: 1 / 1; background: linear-gradient(90deg, rgba(15, 15, 15, 0.90) 0%, rgba(15, 15, 15, 0.55) 45%, rgba(15, 15, 15, 0.05) 80%); pointer-events: none; z-index: 1;"></div>
             
             <div style="grid-area: 1 / 1; z-index: 2; display: flex; align-items: center; padding: 30px 45px;">
@@ -99,9 +99,6 @@
                 @endif
             @endforeach
         </ul>
-    </div>
-    <div class="overview-img-wrapper">
-        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="{{ $overviewSettings['label'] ?? 'Overview' }}">
     </div>
 </section>
 <section class="benefits service-page-container" id="services">
