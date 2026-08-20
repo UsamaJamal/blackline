@@ -28,7 +28,9 @@ class ServicePageController extends Controller
         $processItems = $service->process ?? [];
         $pricingHeader = $service->pricing_header ?? [];
         $pricingPlans = $service->pricing ?? [];
-        $faqs = \App\Models\Faq::whereJsonContains('pages', 'services')->get();
+        $faqs = \App\Models\Faq::whereJsonContains('pages', 'services')
+            ->orWhereJsonContains('pages', 'services/' . $service->slug)
+            ->get();
 
         return view('service-page', compact(
             'service',

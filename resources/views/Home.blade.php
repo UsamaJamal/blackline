@@ -2498,10 +2498,10 @@ button {
                     }
                 }
 
-                var prev = p.querySelector('.work-prev');
-                var next = p.querySelector('.work-next');
-                if (prev) prev.style.display = (n === 0) ? 'none' : 'flex';
-                if (next) next.style.display = (n === totalPanels - 1) ? 'none' : 'flex';
+                var prevs = p.querySelectorAll('.work-prev');
+                var nexts = p.querySelectorAll('.work-next');
+                prevs.forEach(function(btn) { btn.style.display = (n === 0) ? 'none' : 'flex'; });
+                nexts.forEach(function(btn) { btn.style.display = (n === totalPanels - 1) ? 'none' : 'flex'; });
             });
         }
 
@@ -2538,11 +2538,15 @@ button {
                 openPanel(i);
             });
             
-            // Allow arrow clicks
-            var prevBtn = panel.querySelector('.work-prev');
-            var nextBtn = panel.querySelector('.work-next');
-            if (prevBtn) prevBtn.addEventListener('click', function(e) { e.stopPropagation(); openPanel(i - 1); });
-            if (nextBtn) nextBtn.addEventListener('click', function(e) { e.stopPropagation(); openPanel(i + 1); });
+            // Allow arrow clicks for all prev/next buttons (desktop and mobile sets)
+            var prevBtns = panel.querySelectorAll('.work-prev');
+            var nextBtns = panel.querySelectorAll('.work-next');
+            prevBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) { e.stopPropagation(); openPanel(i - 1); });
+            });
+            nextBtns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) { e.stopPropagation(); openPanel(i + 1); });
+            });
         });
     }
 

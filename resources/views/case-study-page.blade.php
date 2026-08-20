@@ -56,13 +56,17 @@
             .case-study-hero-title {
                 font-size: 36px !important;
             }
+            .case-study-hero-wrapper {
+                height: 50vh !important;
+                max-height: 50vh !important;
+            }
         }
     </style>
-    <section class="case-study-hero-wrapper" style="position: relative; width: 100%; margin: 0 auto; overflow: hidden; background: #161616;">
+    <section class="case-study-hero-wrapper" style="position: relative; width: 100%; margin: 0 auto; overflow: hidden; background: #161616; height: 65vh; min-height: 400px; max-height: 600px;">
         <!-- Image determines the height of the section. No cropping. -->
         <picture>
             <source media="(max-width: 768px)" srcset="{{ asset($hero['mobile_image'] ?? ($hero['image'] ?? 'images/work-nova.jpg')) }}">
-            <img class="hero-image-img" src="{{ asset($hero['image'] ?? 'images/work-nova.jpg') }}" alt="Case Study Hero" style="width: 100%; height: auto; display: block;">
+            <img class="hero-image-img" src="{{ asset($hero['image'] ?? 'images/work-nova.jpg') }}" alt="Case Study Hero" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </picture>
         
         <!-- Gradient overlay -->

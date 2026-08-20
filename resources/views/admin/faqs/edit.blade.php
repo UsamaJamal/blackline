@@ -43,8 +43,14 @@
             <div style="display: flex; flex-direction: column; gap: 10px;">
                 <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
                     <input type="checkbox" name="pages[]" value="services" {{ (is_array(old('pages')) && in_array('services', old('pages'))) || in_array('services', $assignedPages) ? 'checked' : '' }}>
-                    Services Page
+                    All Services Pages
                 </label>
+                @foreach(\App\Models\Service::all() as $service)
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; margin-left: 20px;">
+                    <input type="checkbox" name="pages[]" value="services/{{ $service->slug }}" {{ (is_array(old('pages')) && in_array('services/'.$service->slug, old('pages'))) || in_array('services/'.$service->slug, $assignedPages) ? 'checked' : '' }}>
+                    Service: {{ $service->title }}
+                </label>
+                @endforeach
                 <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
                     <input type="checkbox" name="pages[]" value="case-study" {{ (is_array(old('pages')) && in_array('case-study', old('pages'))) || in_array('case-study', $assignedPages) ? 'checked' : '' }}>
                     Case Study Page
