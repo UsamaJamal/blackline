@@ -118,7 +118,8 @@
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px 0;
-    color: #fff;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
     font-size: 14px;
     font-family: inherit;
     outline: none;
@@ -129,6 +130,7 @@
 .input-group input::placeholder,
 .input-group textarea::placeholder {
     color: #7A7A7C;
+    -webkit-text-fill-color: #7A7A7C !important;
 }
 
 .input-group input:focus,
@@ -148,7 +150,7 @@
 .input-group textarea:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #1C1C1F inset !important;
     -webkit-text-fill-color: #fff !important;
-    transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
 }
 
 .input-group textarea {
