@@ -58,16 +58,17 @@
 <body>
 @include('components.header')
 <main>
-<section class="hero" style="position: relative; padding: 30px 0 10px; min-height: auto;">
+<section class="hero-wrapper" style="position: relative; padding: 10px 0 10px;">
     <div class="service-page-container">
-        <div style="position: relative; display: grid; border-radius: 20px; overflow: hidden;">
-            <img src="{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}" alt="Hero Background" style="grid-area: 1 / 1; width: 100%; height: auto; display: block; object-fit: contain;">
-            <div style="grid-area: 1 / 1; background: linear-gradient(90deg, rgba(15, 15, 15, 0.85) 0%, rgba(15, 15, 15, 0.45) 45%, rgba(15, 15, 15, 0) 75%); pointer-events: none; z-index: 1;"></div>
-            <div style="grid-area: 1 / 1; z-index: 2; display: flex; align-items: center; padding: 40px 50px;">
-                <div style="max-width: 520px;">
-                    <span style="font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: inline-block; margin-bottom: 12px;">{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span>
-                    <h1 style="font-size: clamp(24px, 3.2vw, 44px); font-weight: 800; color: #ffffff; line-height: 1.2; margin: 10px 0 24px; letter-spacing: -0.5px;">{{ $heroSettings['heading'] ?? 'Your Brand Deserves More Than a Feed.' }}</h1>
-                    <a href="{{ $heroSettings['btn_link'] ?? route('book-now') }}" class="gold-btn" style="display: inline-flex; align-items: center; gap: 8px;">{!! $heroSettings['btn_text'] ?? 'Book a Discovery Call &nbsp; →' !!}</a>
+        <div style="position: relative; display: grid; border-radius: 20px; overflow: hidden; background: #161616;">
+            <img src="{{ asset($heroSettings['image'] ?? 'assets/pdf/asset-12.png') }}" alt="Hero Background" style="grid-area: 1 / 1; width: 100%; height: auto; display: block;">
+            <div style="grid-area: 1 / 1; background: linear-gradient(90deg, rgba(15, 15, 15, 0.90) 0%, rgba(15, 15, 15, 0.55) 45%, rgba(15, 15, 15, 0.05) 80%); pointer-events: none; z-index: 1;"></div>
+            
+            <div style="grid-area: 1 / 1; z-index: 2; display: flex; align-items: center; padding: 30px 45px;">
+                <div style="max-width: 500px;">
+                    <span style="font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: inline-block; margin-bottom: 8px;">{{ $heroSettings['small_text'] ?? 'SOCIAL MEDIA MANAGEMENT' }}</span>
+                    <h1 style="font-size: clamp(22px, 2.8vw, 40px); font-weight: 800; color: #ffffff; line-height: 1.2; margin: 8px 0 20px; letter-spacing: -0.5px;">{{ $heroSettings['heading'] ?? 'Your Brand Deserves More Than a Feed.' }}</h1>
+                    <a href="{{ $heroSettings['btn_link'] ?? route('book-now') }}" class="gold-btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; font-size: 15px;">{!! $heroSettings['btn_text'] ?? 'Book a Discovery Call &nbsp; →' !!}</a>
                 </div>
             </div>
         </div>
@@ -98,9 +99,6 @@
                 @endif
             @endforeach
         </ul>
-    </div>
-    <div class="overview-img-wrapper">
-        <img src="{{ asset($overviewSettings['image'] ?? 'assets/pdf/asset-08.png') }}" alt="{{ $overviewSettings['label'] ?? 'Overview' }}">
     </div>
 </section>
 <section class="benefits service-page-container" id="services">
