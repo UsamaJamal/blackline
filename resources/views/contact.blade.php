@@ -113,7 +113,8 @@
         </div>
       </div>
       
-      <form class="contact-form" onsubmit="return false;">
+      <form class="contact-form" id="contactForm">
+        @csrf
         <div class="form-row">
           <div class="input-group">
             <label for="first_name">First Name *</label>
@@ -157,7 +158,8 @@
           <textarea id="details" name="details" placeholder="" required></textarea>
         </div>
         
-        <button type="submit" class="btn btn-gold btn-submit">Submit</button>
+        <button type="submit" class="btn btn-gold btn-submit" id="submitBtn">Submit</button>
+        <div id="form-message" style="display:none; padding:10px; margin-top:10px; border-radius:5px; text-align: center;"></div>
       </form>
     </div>
     
@@ -185,6 +187,55 @@
     if (phoneEl) {
         phoneEl.addEventListener('input', function() {
             this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    }
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('form-message');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            formMessage.style.display = 'none';
+            
+            const formData = new FormData(this);
+            
+            fetch("{{ route('contact.store') }}", {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+                formMessage.style.display = 'block';
+                
+                if (data.success) {
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.textContent = data.message;
+                    contactForm.reset();
+                } else {
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.textContent = data.message || 'Something went wrong. Please try again.';
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+                formMessage.style.display = 'block';
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+                formMessage.textContent = 'An error occurred. Please try again later.';
+            });
         });
     }
   });

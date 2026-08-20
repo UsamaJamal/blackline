@@ -28,6 +28,7 @@ Route::get('/faqs', [FaqController::class, 'index'])->name('faqs');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog-post');
 Route::view('/contact-us', 'contact')->name('contact');
+Route::post('/contact-us', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 Route::get('/book-now', [\App\Http\Controllers\BookNowController::class, 'index'])->name('book-now');
 Route::post('/book-now', [\App\Http\Controllers\BookNowController::class, 'store'])->name('book-now.store');
 

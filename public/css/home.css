@@ -2008,16 +2008,20 @@ button {
         grid-column: 1 / -1;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
+        width: fit-content;
+        margin: 0 auto;
     }
 
     .foot-col:last-child h4 {
-        text-align: center;
+        text-align: left;
     }
 
     .contact-list {
-        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         text-align: left;
     }
 
