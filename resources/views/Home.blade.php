@@ -863,10 +863,10 @@ button {
 
 .work-nav-arrows {
     position: absolute;
-    bottom: 40px;
-    right: 40px;
+    bottom: 28px;
+    right: 28px;
     display: flex;
-    gap: 12px;
+    gap: 10px;
     z-index: 10;
     opacity: 0;
     pointer-events: none;
@@ -890,10 +890,10 @@ button {
 }
 
 .work-arrow {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.85);
     background: transparent;
     color: #fff;
     display: flex;
@@ -910,10 +910,8 @@ button {
 }
 
 .work-arrow svg {
-    width: 20px;
-    height: 20px;
-}
-    cursor: pointer;
+    width: 17px;
+    height: 17px;
 }
 
 .work-body h3 {
@@ -956,7 +954,7 @@ button {
 
 .work-plus svg {
     width: 17px;
-    height: 17px
+    height: 17px;
 }
 
 .work-plus:hover {
@@ -1913,11 +1911,6 @@ button {
         width: 100%;
     }
 
-    .work-nav-arrows {
-        position: static;
-        margin-left: auto;
-    }
-
     .work-panel>img,
     .work-panel>video {
         object-fit: contain;
@@ -2094,10 +2087,6 @@ button {
     .work-action-row {
         justify-content: space-between !important;
         width: 100% !important;
-    }
-    .work-nav-arrows {
-        position: static !important;
-        margin-left: auto !important;
     }
 }
 @media (max-width: 640px) {
@@ -2320,12 +2309,12 @@ button {
             <a href="{{ $study['btn_link'] ?? '#' }}" class="btn btn-gold btn-sm">{{ $study['btn_text'] ?? 'View Case Study' }}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            
-            <div class="work-nav-arrows">
-              <button class="work-arrow work-prev" aria-label="Previous" {!! $index === 0 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
-              <button class="work-arrow work-next" aria-label="Next" {!! $index === count($caseStudies) - 1 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
-            </div>
           </div>
+        </div>
+
+        <div class="work-nav-arrows">
+          <button class="work-arrow work-prev" aria-label="Previous" {!! $index === 0 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="work-arrow work-next" aria-label="Next" {!! $index === count($caseStudies) - 1 ? 'style="display:none;"' : '' !!}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
         </div>
 
         <button class="work-plus" aria-label="Open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>

@@ -214,8 +214,8 @@
                         </div>
                         <div class="blog-card-content">
                             <h3 class="blog-card-title">{{ $relatedBlog->title }}</h3>
-                            <p class="blog-card-excerpt">{{ Str::limit(strip_tags($relatedBlog->content), 100) }}</p>
-                            <p class="blog-card-meta">{{ $relatedBlog->created_at->format('M d') }} &bull; {{ ceil(str_word_count(strip_tags($relatedBlog->content)) / 200) }} min read</p>
+                            <p class="blog-card-excerpt">{{ Str::limit($relatedBlog->short_description ?? strip_tags($relatedBlog->content), 100) }}</p>
+                            <p class="blog-card-meta">{{ $relatedBlog->created_at->format('M d') }} &bull; {{ ceil(str_word_count(strip_tags($relatedBlog->content ?? $relatedBlog->short_description ?? '')) / 200) ?: 5 }} min read</p>
                         </div>
                     </a>
                     @endforeach
