@@ -2329,10 +2329,19 @@ button {
             'images/video-posters/ecommerce.jpg',
             'images/video-posters/retail.jpg',
         ];
+        // Web copies retain the original resolution while streaming much faster.
+        $workVideos = [
+            'videos/automotive-google-ads-meta-ads-marketing.mp4' => 'videos/web/automotive.mp4',
+            'videos/content-creation-video-production-blackline-marketing.mp4' => 'videos/web/content-creation.mp4',
+            'videos/ecommerce-website-app-traffic-growth-blackline-marketing.mp4' => 'videos/web/ecommerce.mp4',
+            'videos/ecommerce-website-app-traffic-growth-blackline-marketing.mp4.mov.mp4' => 'videos/web/ecommerce.mp4',
+            'videos/retail-app-development-customer-growth-blackline-marketing.mp4' => 'videos/web/retail.mp4',
+        ];
       @endphp
       @foreach($caseStudies as $index => $study)
       <article class="work-panel {{ $index === 0 ? 'is-open' : '' }}" data-title="{{ $study['title'] }}">
-        <video class="deferred-video" data-src="{{ asset($study['video'] ?? 'videos/work-first-video.mp4') }}" poster="{{ asset($workPosters[$index] ?? 'images/hero.jpg') }}" preload="none" muted playsinline></video>
+        @php $videoPath = $study['video'] ?? 'videos/work-first-video.mp4'; @endphp
+        <video class="deferred-video" data-src="{{ asset($workVideos[$videoPath] ?? $videoPath) }}" poster="{{ asset($workPosters[$index] ?? 'images/hero.jpg') }}" preload="none" muted playsinline></video>
         <span class="work-vtitle">{{ $study['title'] }}</span>
         <button class="play" aria-label="Play showreel">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>

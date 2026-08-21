@@ -13,13 +13,21 @@
           @php
             $feedbackPosters = [
               'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'images/video-posters/testimonial-agency.jpg',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'images/video-posters/testimonial-agency.jpg',
               'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'images/video-posters/testimonial-client.jpg',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'images/video-posters/testimonial-client.jpg',
+            ];
+            $feedbackVideos = [
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'videos/web/testimonial-agency.mp4',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'videos/web/testimonial-agency.mp4',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'videos/web/testimonial-client.mp4',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'videos/web/testimonial-client.mp4',
             ];
           @endphp
           @foreach($feedbacks as $feedback)
           <figure class="testi-card">
             <div class="testi-media">
-              <video class="deferred-video" data-src="{{ asset($feedback['video']) }}" poster="{{ asset($feedbackPosters[$feedback['video']] ?? 'images/testimonial.jpg') }}" preload="none" muted playsinline></video>
+              <video class="deferred-video" data-src="{{ asset($feedbackVideos[$feedback['video']] ?? $feedback['video']) }}" poster="{{ asset($feedbackPosters[$feedback['video']] ?? 'images/testimonial.jpg') }}" preload="none" muted playsinline></video>
               <button class="play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></button>
             </div>
             <blockquote class="testi-body">
