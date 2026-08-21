@@ -62,7 +62,10 @@ main {
 
 @media (min-width: 768px) {
     .faqs-filters {
-        justify-content: center;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+        justify-content: flex-start;
     }
 }
 
