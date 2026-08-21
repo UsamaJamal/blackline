@@ -95,7 +95,7 @@ input {
 .portfolio-work {
     width: min(1240px, 86%);
     margin: auto;
-    padding: 30px 0 20px
+    padding: 30px 0 80px
 }
 
 .portfolio-heading {
@@ -246,7 +246,7 @@ input {
 }
 
 .project.is-raised {
-    transform: translateY(98px)
+    margin-top: 98px
 }
 
 .project-img-wrapper {
@@ -707,7 +707,7 @@ input {
     }
 
     .project.is-raised {
-        transform: none
+        margin-top: 0
     }
 
     .project img {
