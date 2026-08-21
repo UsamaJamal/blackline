@@ -12,16 +12,16 @@
         <div class="testi-track" id="tTrack">
           @php
             $feedbackPosters = [
-              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'images/video-posters/testimonial-agency.jpg',
-              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'images/video-posters/testimonial-agency.jpg',
-              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'images/video-posters/testimonial-client.jpg',
-              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'images/video-posters/testimonial-client.jpg',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'images/video-posters/testimonial-client.jpg',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'images/video-posters/testimonial-client.jpg',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'images/video-posters/testimonial-agency.jpg',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'images/video-posters/testimonial-agency.jpg',
             ];
             $feedbackVideos = [
-              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'videos/web/testimonial-agency.mp4',
-              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'videos/web/testimonial-agency.mp4',
-              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'videos/web/testimonial-client.mp4',
-              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'videos/web/testimonial-client.mp4',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'videos/web/testimonial-client.mp4',
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4.mp4' => 'videos/web/testimonial-client.mp4',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'videos/web/testimonial-agency.mp4',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4.mp4' => 'videos/web/testimonial-agency.mp4',
             ];
           @endphp
           @foreach($feedbacks as $feedback)
