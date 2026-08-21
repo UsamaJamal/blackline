@@ -118,11 +118,11 @@
         <div class="form-row">
           <div class="input-group">
             <label for="first_name">First Name *</label>
-            <input type="text" id="first_name" name="first_name" placeholder="Name" required>
+            <input type="text" id="first_name" name="first_name" placeholder="Name" required spellcheck="false">
           </div>
           <div class="input-group">
             <label for="last_name">Last Name *</label>
-            <input type="text" id="last_name" name="last_name" placeholder="Name" required>
+            <input type="text" id="last_name" name="last_name" placeholder="Name" required spellcheck="false">
           </div>
         </div>
         
@@ -139,7 +139,7 @@
         
         <div class="input-group">
           <label for="company">Company Name *</label>
-          <input type="text" id="company" name="company" placeholder="Your company name" required>
+          <input type="text" id="company" name="company" placeholder="Your company name" required spellcheck="false">
         </div>
         
         <div class="input-group select-group">
@@ -155,7 +155,7 @@
         
         <div class="input-group">
           <label for="details">Project Details *</label>
-          <textarea id="details" name="details" placeholder="" required></textarea>
+          <textarea id="details" name="details" placeholder="" required spellcheck="false"></textarea>
         </div>
         
         <button type="submit" class="btn btn-gold btn-submit" id="submitBtn">Submit</button>

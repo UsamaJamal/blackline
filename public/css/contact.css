@@ -137,6 +137,8 @@
 .input-group select:focus,
 .input-group textarea:focus {
     border-bottom-color: var(--gold);
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
 }
 
 /* Override browser autofill background for dark theme */
