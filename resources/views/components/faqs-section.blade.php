@@ -1,5 +1,5 @@
 @if(isset($faqs) && $faqs->count() > 0)
-    <section class="page-faqs-section container" style="margin-top: 80px; margin-bottom: 100px;">
+    <section class="page-faqs-section container" style="margin-top: 40px; margin-bottom: 50px;">
         <h2 style="font-size: 32px; color: #fff; text-align: center; margin-bottom: 10px; font-weight: 700;">Frequently Asked Questions</h2>
         
         <div class="faqs-container" style="max-width: 1000px; margin: 0 auto;">

@@ -23,6 +23,10 @@
     <meta name="twitter:description" content="{{ !empty($seo['meta_description']) ? $seo['meta_description'] : 'Explore our portfolio of successful digital marketing campaigns, branding projects, and web development case studies by BlackLine Marketing.' }}">
     <meta name="twitter:image" content="{{ asset('images/logo.png') }}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{{ asset('css/home.css') }}">
   <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
   <script src="{{ asset('js/service.js') }}" defer></script>

@@ -1036,8 +1036,14 @@ button {
 
 .testi-media .play {
     opacity: 1;
-    width: 88px;
-    height: 88px
+    width: 65px !important;
+    height: 65px !important;
+}
+
+.testi-media .play svg {
+    width: 32px;
+    height: 32px;
+    margin-left: 2px;
 }
 
 .testi-media.is-playing-video .play {
@@ -1476,9 +1482,14 @@ button {
 .newsletter h2 {
     margin: 0;
     font-size: 28px;
-    font-weight: 800;
+    font-weight: 800 !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     white-space: nowrap;
     flex-shrink: 1;
+}
+
+.newsletter h2 span {
+    display: inline;
 }
 
 .news-form {
@@ -1891,11 +1902,25 @@ button {
 
     .news-grid {
         flex-direction: column;
-        align-items: stretch
+        align-items: stretch;
+    }
+
+    .newsletter h2 {
+        white-space: normal !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        font-size: 24px !important;
+        width: 100% !important;
+        line-height: 1.35 !important;
+    }
+
+    .newsletter h2 span {
+        display: block !important;
+        text-align: center !important;
     }
 
     .news-form {
-        flex: 1 1 auto
+        flex: 1 1 auto;
     }
 }
 
@@ -1939,10 +1964,17 @@ button {
     }
 
     .newsletter h2 {
-        white-space: normal;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 24px;
+        white-space: normal !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+        font-size: 24px !important;
+        width: 100% !important;
+        line-height: 1.35 !important;
+    }
+
+    .newsletter h2 span {
+        display: block !important;
+        text-align: center !important;
     }
 
     .news-form {

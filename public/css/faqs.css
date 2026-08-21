@@ -91,7 +91,7 @@ main {
 }
 
 .faqs-container {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 
@@ -217,5 +217,9 @@ main {
 
     .faqs-hero p br {
         display: none;
+    }
+
+    .faqs-container {
+        margin-bottom: 20px;
     }
 }
