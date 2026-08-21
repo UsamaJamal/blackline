@@ -1616,7 +1616,7 @@ button {
 .foot-grid {
     display: grid;
     grid-template-columns: 1.55fr 1fr 1.15fr 1.1fr;
-    gap: 44px;
+    gap: 25px;
     padding-bottom: 52px;
 }
 
@@ -1633,6 +1633,7 @@ button {
     font-weight: 300;
     line-height: 1.75;
     color: var(--text);
+    text-align: justify;
 }
 
 .socials {

@@ -1544,7 +1544,7 @@ button {
 .foot-grid {
     display: grid;
     grid-template-columns: 1.45fr .9fr 1.05fr 1.45fr;
-    gap: 44px;
+    gap: 25px;
     padding-top: 50px;
     padding-bottom: 20px !important;
 }
@@ -1562,6 +1562,7 @@ button {
     font-weight: 300;
     line-height: 1.75;
     color: var(--text);
+    text-align: justify;
 }
 
 .socials {
