@@ -89,6 +89,10 @@
                     var playBtn = e.target.closest('.play');
                     if (playBtn) {
                         var video = media.querySelector('video');
+                        if (video && video.dataset.src && !video.src) {
+                            video.src = video.dataset.src;
+                            video.load();
+                        }
                         if (video) {
                             media.classList.add('is-playing-video');
                             video.muted = false;

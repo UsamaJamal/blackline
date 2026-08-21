@@ -2321,9 +2321,18 @@ button {
 
     <div style="margin-top: 30px;">
         <div class="work-strip" id="workStrip">
+      @php
+        // Keep the homepage light: full videos are fetched only when visitors press play.
+        $workPosters = [
+            'images/video-posters/automotive.jpg',
+            'images/video-posters/content-creation.jpg',
+            'images/video-posters/ecommerce.jpg',
+            'images/video-posters/retail.jpg',
+        ];
+      @endphp
       @foreach($caseStudies as $index => $study)
       <article class="work-panel {{ $index === 0 ? 'is-open' : '' }}" data-title="{{ $study['title'] }}">
-        <video src="{{ asset($study['video'] ?? 'videos/work-first-video.mp4') }}#t=0.001" preload="auto" muted playsinline></video>
+        <video class="deferred-video" data-src="{{ asset($study['video'] ?? 'videos/work-first-video.mp4') }}" poster="{{ asset($workPosters[$index] ?? 'images/hero.jpg') }}" preload="none" muted playsinline></video>
         <span class="work-vtitle">{{ $study['title'] }}</span>
         <button class="play" aria-label="Play showreel">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
@@ -2482,6 +2491,14 @@ button {
         var panels = Array.prototype.slice.call(strip.querySelectorAll('.work-panel'));
         var totalPanels = panels.length;
 
+        function loadVideo(video) {
+            if (video && video.dataset.src && !video.src) {
+                video.src = video.dataset.src;
+                video.load();
+            }
+            return video;
+        }
+
         function openPanel(i) {
             i = (i + totalPanels) % totalPanels;
             panels.forEach(function (p, n) { 
@@ -2509,7 +2526,7 @@ button {
             panel.addEventListener('click', function (e) {
                 // If the panel is currently playing a video and it's clicked, pause it.
                 if (panel.classList.contains('is-playing-video')) {
-                    var video = panel.querySelector('video');
+                    var video = loadVideo(panel.querySelector('video'));
                     if (video) {
                         panel.classList.remove('is-playing-video');
                         video.pause();
@@ -2519,7 +2536,7 @@ button {
 
                 var playBtn = e.target.closest('.play');
                 if (playBtn) {
-                    var video = panel.querySelector('video');
+                    var video = loadVideo(panel.querySelector('video'));
                     if (video) {
                         panel.classList.add('is-playing-video');
                         video.muted = false;

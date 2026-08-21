@@ -10,10 +10,16 @@
 
       <div class="testi-viewport">
         <div class="testi-track" id="tTrack">
+          @php
+            $feedbackPosters = [
+              'videos/blackline-marketing-digital-agency-client-review-testimonial.mp4' => 'images/video-posters/testimonial-agency.jpg',
+              'videos/blackline-marketing-client-review-digital-marketing-services.mp4' => 'images/video-posters/testimonial-client.jpg',
+            ];
+          @endphp
           @foreach($feedbacks as $feedback)
           <figure class="testi-card">
             <div class="testi-media">
-              <video src="{{ asset($feedback['video']) }}" muted playsinline></video>
+              <video class="deferred-video" data-src="{{ asset($feedback['video']) }}" poster="{{ asset($feedbackPosters[$feedback['video']] ?? 'images/testimonial.jpg') }}" preload="none" muted playsinline></video>
               <button class="play" aria-label="Play video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></button>
             </div>
             <blockquote class="testi-body">
