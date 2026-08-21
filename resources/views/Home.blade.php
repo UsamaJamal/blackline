@@ -2520,7 +2520,6 @@ button {
                     var vid = p.querySelector('video');
                     if (vid) {
                         vid.pause();
-                        vid.currentTime = 0;
                     }
                 }
 
@@ -2550,7 +2549,6 @@ button {
                         panel.classList.add('is-playing-video');
                         video.muted = false;
                         video.loop = false;
-                        video.currentTime = 0;
                         video.play();
                         
                         video.onended = function() {

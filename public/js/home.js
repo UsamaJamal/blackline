@@ -48,7 +48,6 @@
                 var v = m.querySelector('video');
                 if (v) {
                     v.pause();
-                    v.currentTime = 0;
                 }
             });
         }
@@ -82,7 +81,6 @@
                         if (video) {
                             media.classList.remove('is-playing-video');
                             video.pause();
-                            video.currentTime = 0;
                         }
                         return;
                     }
@@ -96,7 +94,6 @@
                         if (video) {
                             media.classList.add('is-playing-video');
                             video.muted = false;
-                            video.currentTime = 0;
                             video.play();
                             video.onended = function() {
                                 media.classList.remove('is-playing-video');
