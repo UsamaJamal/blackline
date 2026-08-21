@@ -1532,7 +1532,7 @@ button {
 
 .foot-grid {
     display: grid;
-    grid-template-columns: 1.55fr 1fr 1.15fr 1.1fr;
+    grid-template-columns: 1.45fr .9fr 1.05fr 1.45fr;
     gap: 44px;
     padding-top: 50px;
     padding-bottom: 20px !important;
